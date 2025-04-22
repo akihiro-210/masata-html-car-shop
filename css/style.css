@@ -224,11 +224,12 @@ select::-ms-expand {
 .header__link-contact {
   color: #fff;
   margin-left: 50px;
-  padding: 31px 0 30px;
+  padding: 27px 0 34px;
   display: inline-block;
   width: 187px;
   text-align: center;
   background-color: #011950;
+  line-height: 1.1875;
 }
 
 .header__link-contact .fa-envelope {
@@ -1440,7 +1441,7 @@ select::-ms-expand {
   width: 500px;
   padding-top: 16px;
   padding-left: 50px;
-  padding-bottom: 52px;
+  padding-bottom: 47px;
   background-color: #fff;
   z-index: 2;
 }
@@ -1458,35 +1459,37 @@ select::-ms-expand {
   font-weight: 500;
   line-height: 1.48;
   text-transform: capitalize;
+  letter-spacing: 0.03em;
 }
 @media screen and (max-width: 1024px) {
   .sub-mv__title {
     font-size: 44px;
-    line-height: 1.477;
+    line-height: 1.4772727273;
   }
 }
 
 .sub-mv__subtitle {
   font-size: 20px;
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1.45;
   margin-top: -16px;
 }
 @media screen and (max-width: 1024px) {
   .sub-mv__subtitle {
     font-size: 12px;
-    line-height: 1.167;
+    line-height: 1.4166666667;
     margin-top: -6px;
   }
 }
 
+.sub-mv__inner picture,
 .sub-mv__img {
   width: 100%;
   height: inherit;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  -o-object-position: bottom;
+     object-position: bottom;
 }
 
 .concept {
@@ -2985,6 +2988,8 @@ select::-ms-expand {
   font-size: 40px;
   font-weight: 700;
   text-transform: uppercase;
+  font-family: "Oswald", "Noto Sans JP", sans-serif;
+  line-height: 1.475;
 }
 @media screen and (max-width: 768px) {
   .thanks__title.text {
@@ -2997,12 +3002,13 @@ select::-ms-expand {
   margin-top: 20px;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.222;
+  line-height: 1.2222222222;
 }
 @media screen and (max-width: 768px) {
   .thanks__subtitle.text {
     margin-top: 10px;
     font-size: 14px;
+    line-height: 1.4285714286;
   }
 }
 
@@ -3019,12 +3025,15 @@ select::-ms-expand {
   margin-top: 40px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .thanks__link {
   display: inline-block;
   width: 460px;
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 24px;
+  padding-right: 15px;
   font-size: 18px;
   line-height: 1.222;
   color: #fff;
@@ -3282,11 +3291,15 @@ select::-ms-expand {
   justify-content: right;
   margin-right: 60px;
   flex-wrap: wrap;
+  font-size: 15px;
+  line-height: 1.2;
 }
 @media screen and (max-width: 768px) {
   .breadcrumb {
     margin-top: 10px;
     margin-right: 10px;
+    font-size: 10px;
+    line-height: 1.2;
   }
 }
 

@@ -79,11 +79,12 @@
 .header__link-contact{
     color: $white;
     margin-left: 50px;
-    padding: 31px 0 30px;
+    padding: 27px 0 34px;
     display: inline-block;
     width: 187px;
     text-align: center;
     background-color: $navy;
+    line-height: calc(19/16);
 }
 
 .header__link-contact .fa-envelope{
@@ -1179,7 +1180,7 @@
     width: 500px;
     padding-top: 16px;
     padding-left: 50px;
-    padding-bottom: 52px;
+    padding-bottom: 47px;
     background-color: $white;
     z-index: 2;
     @include mq("lg"){
@@ -1193,34 +1194,33 @@
 .sub-mv__title{
     font-size: 100px;
     font-weight: $medium;
-    line-height: 1.48;
+    line-height: calc(148/100);
     text-transform: capitalize;
+    letter-spacing: 0.03em;
     @include mq("lg"){
         font-size: 44px;
-        line-height: 1.477;
+        line-height: calc(65/44);
     }
 }
 
 .sub-mv__subtitle{
     font-size: 20px;
     font-weight: $medium;
-    line-height: 1.2;
+    line-height: calc(29/20);
     margin-top: -16px;
     @include mq("lg"){
         font-size: 12px;
-        line-height: 1.167;
+        line-height: calc(17/12);
         margin-top: -6px;
     }
 }
 
+.sub-mv__inner picture,
 .sub-mv__img{
     width: 100%;
     height: inherit;
     object-fit: cover;
-    object-position: center;
-    // @include mq("md"){
-    //     object-position: right;
-    // }
+    object-position: bottom;
 }
 
 // アバウトページ　コンセプト
@@ -2538,9 +2538,11 @@
     font-size: 40px;
     font-weight: $bold;
     text-transform: uppercase;
+    font-family: $base-font;
+    line-height: calc(59/40);
     @include mq("md"){
         font-size: 24px;
-        line-height: 1.5;
+        line-height: calc(36/24);
     }
 }
 
@@ -2548,10 +2550,11 @@
     margin-top: 20px;
     font-size: 18px;
     font-weight: $medium;
-    line-height: 1.222;
+    line-height: calc(22/18);
     @include mq("md"){
         margin-top: 10px;
         font-size: 14px;
+        line-height: calc(20/14);
     }
 }
 
@@ -2566,12 +2569,15 @@
     margin-top: 40px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .thanks__link{
     display: inline-block;
     width: 460px;
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 24px;
+    padding-right: 15px;
     font-size: 18px;
     line-height: 1.222;
     color: $white;
@@ -2821,9 +2827,13 @@
     justify-content: right;
     margin-right: 60px;
     flex-wrap: wrap;
+    font-size: 15px;
+    line-height: calc(18/15);
     @include mq("md"){
         margin-top: 10px;
         margin-right: 10px;
+        font-size: 10px;
+        line-height: calc(12/10);
     }
 }
 
