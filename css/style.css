@@ -3061,7 +3061,7 @@ select::-ms-expand {
   padding-left: 170px;
   height: 600px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .error__wrap {
     margin-top: 120px;
     padding-left: 10px;
@@ -3078,13 +3078,13 @@ select::-ms-expand {
 .error__title-wrap {
   position: absolute;
   top: 50%;
-  left: 43.7%;
+  right: 16.2204724409%;
   transform: translateY(-50%);
 }
 @media screen and (max-width: 1024px) {
   .error__title-wrap {
-    left: 50%;
-    transform: translate(-50%, -50%);
+    right: 50%;
+    transform: translate(50%, -50%);
   }
 }
 
@@ -3093,6 +3093,7 @@ select::-ms-expand {
   font-weight: 700;
   line-height: 1.486;
   color: #fff;
+  text-transform: capitalize;
 }
 @media screen and (max-width: 768px) {
   .error__title {
@@ -3105,13 +3106,18 @@ select::-ms-expand {
   color: #fff;
 }
 
+.error__inner picture,
+.error__inner source,
+.error__img {
+  height: inherit;
+}
+
 .error__img {
   width: 100%;
-  height: inherit;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  -o-object-position: top;
+     object-position: top;
 }
 
 .error__button {
@@ -3130,7 +3136,7 @@ select::-ms-expand {
   display: inline-block;
   text-align: center;
   width: 145px;
-  padding: 12px;
+  padding: 11px;
   color: #fff;
   font-size: 14px;
   line-height: 1.429;
@@ -3157,15 +3163,21 @@ select::-ms-expand {
 }
 
 .error__text-body {
-  padding: 0 20px;
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  .error__text-body {
+    padding-inline: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 1024px) {
   .error__text-body .error__subtitle {
     margin-top: 40px;
     color: #000;
-    display: #011950;
-    justify-content: center;
   }
 }
 

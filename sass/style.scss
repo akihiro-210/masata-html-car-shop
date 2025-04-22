@@ -2396,7 +2396,7 @@
 .wpcf7-list-item {
     margin: 0;
   }
-  
+
 .wpcf7-form-control-wrap[data-name="radio-category"]
 .wpcf7-list-item+ .wpcf7-list-item {
     margin-left: 20px;
@@ -2446,7 +2446,7 @@
     display: inline-block;
     padding-left: 25px;
 }
-  
+
 .wpcf7-form-control-wrap[data-name="privacy"] .wpcf7-list-item-label::before {
     position: absolute;
     top: 3.25px;
@@ -2457,7 +2457,7 @@
     border: 1px solid $gray-line;
     border-radius: 3px;
 }
-  
+
 .wpcf7-form-control-wrap[data-name="privacy"] .wpcf7-list-item-label::after {
     position: absolute;
     top: 9.25px;
@@ -2474,7 +2474,7 @@
 .form__checkbox:checked+ .wpcf7-list-item-label::after {
     opacity: 1;
   }
-  
+
 .form__submit-button {
     margin-top: 40px;
     text-align: center;
@@ -2498,7 +2498,7 @@
         padding: 12px;
     }
 }
-  
+
 // コンタクトコンファームページ
 .confirm{
     margin-top: 60px;
@@ -2604,7 +2604,7 @@
     margin-top: 330px;
     padding-left: 170px;
     height: 600px;
-    @include mq("md"){
+    @include mq("lg"){
         margin-top: 120px;
         padding-left: 10px;
         height: 243px;
@@ -2619,11 +2619,11 @@
 .error__title-wrap{
     position: absolute;
     top: 50%;
-    left: 43.7%;
+    right: calc(100% * 206/1270);
     transform: translateY(-50%);
     @include mq("lg"){
-        left: 50%;
-        transform: translate(-50%,-50%);
+        right: 50%;
+        transform: translate(50%,-50%);
     }
 }
 
@@ -2632,6 +2632,7 @@
     font-weight: $bold;
     line-height: 1.486;
     color: $white;
+    text-transform: capitalize;
     @include mq("md"){
         font-size: 35px;
     }
@@ -2642,11 +2643,16 @@
     color: $white;
 }
 
+.error__inner picture,
+.error__inner source,
+.error__img{
+    height: inherit;
+}
+
 .error__img{
     width: 100%;
-    height: inherit;
     object-fit: cover;
-    object-position: center;
+    object-position: top;
 }
 
 .error__button{
@@ -2663,7 +2669,7 @@
     display: inline-block;
     text-align: center;
     width: 145px;
-    padding: 12px;
+    padding: 11px;
     color: $white;
     font-size: 14px;
     line-height: 1.429;
@@ -2686,15 +2692,19 @@
 }
 
 .error__text-body{
-    padding: 0 20px;
+    display: none;
+    @include mq("lg"){
+        padding-inline: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .error__text-body .error__subtitle{
      @include mq("lg"){
         margin-top: 40px;
         color: $black;
-        display: $navy;
-        justify-content: center;
     }
 }
 
