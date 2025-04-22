@@ -40,17 +40,17 @@
 <body>
   <header class="header js-header">
     <div class="header__inner">
-      <h1 class="header__name"><a href="/index.html"><img src="/images/Toppage/icon-logo-white.svg" alt="ヘッダーロゴ白" class="header__logo"></a></h1>
+      <h1 class="header__name"><a href="./index.html"><img src="./images/Toppage/icon-logo-white.svg" alt="ExciteCodeWhite" class="header__logo"></a></h1>
       <nav class="nav header__nav md-none">
         <ul class="header__items">
-          <li class="header__item"><a href="/index.html" class="nav__item header__link">top</a></li>
-          <li class="header__item"><a href="/about.html" class="nav__item header__link">about</a></li>
-          <li class="header__item"><a href="/service.html" class="nav__item header__link">service</a></li>
-          <li class="header__item"><a href="/works.html" class="nav__item header__link">works</a></li>
-          <li class="header__item"><a href="/news.html" class="nav__item header__link">news</a></li>
+          <li class="header__item"><a href="./index.html" class="nav__item header__link">top</a></li>
+          <li class="header__item"><a href="./about.html" class="nav__item header__link">about</a></li>
+          <li class="header__item"><a href="./service.html" class="nav__item header__link">service</a></li>
+          <li class="header__item"><a href="./works.html" class="nav__item header__link">works</a></li>
+          <li class="header__item"><a href="./news.html" class="nav__item header__link">news</a></li>
         </ul>
+        <a href="./contact.html" class="header__link header__link-contact md-none"><i class="fa-regular fa-envelope"></i>contact</a>
       </nav>
-      <a href="/contact.html" class="header__link header__link-contact md-none">contact</a>
     </div>
 <!-- ハンバーガーメニュー -->
     <div class="hamburger js-hamburger md-show">
@@ -94,10 +94,14 @@
               <a href="/index.html" class="error__link hover-wide"><span class="arrow-before"></span>TOPへ戻る</a>
             </div>
           </div>
-          <img src="/images/404-img.jpg" alt="" class="error__img">
+          <picture>
+            <source srcset="/images/404-img.jpg" media="(min-width: 1024px)">
+            <img src="/images/404-sp-img.jpg" alt="404fv" class="error__img">
+          </picture>
+          <!-- <img src="/images/404-img.jpg" alt="" class="error__img"> -->
         </div>
       </div>
-      <div class="error__text-body lg-show">
+      <div class="error__text-body">
         <p class="error__subtitle text">お探しのページはURLが誤っているか、削除された可能性があります。<br>3秒後にTOPページに遷移します</p>
         <div class="error__button">
           <a href="/index.html" class="error__link hover-wide"><span class="arrow-before"></span>TOPへ戻る</a>
@@ -109,24 +113,24 @@
     <div class="footer__inner">
       <div class="footer__wrap">
         <div class="footer__logos">
-          <a href="/index.html">
-            <img src="/images/Toppage/icon-logo-navy.svg" alt="" class="footer__logo">
+          <a href="./index.html" class="footer__logo-link">
+            <img src="./images/Toppage/icon-logo-navy.svg" alt="ExciteCodeNavy" class="footer__logo">
           </a>
           <ul class="footer__icons">
-            <li class="footer__icon"><a href="/404.html" class="footer__icon-link"><i class="fa-brands fa-facebook"></i></a></li>
-            <li class="footer__icon"><a href="/404.html" class="footer__icon-link"><i class="fa-brands fa-twitter"></i></a></li>
-            <li class="footer__icon"><a href="/404.html" class="footer__icon-link"><i class="fa-brands fa-instagram"></i></a></li>
+            <li class="footer__icon"><a href="./404.html" class="footer__icon-link"><i class="fa-brands fa-facebook"></i></a></li>
+            <li class="footer__icon"><a href="./404.html" class="footer__icon-link"><i class="fa-brands fa-twitter"></i></a></li>
+            <li class="footer__icon"><a href="./404.html" class="footer__icon-link"><i class="fa-brands fa-instagram"></i></a></li>
           </ul>
           <small class="footer__copyright">&copy;2022&nbsp;ExciteCode&nbsp;Automobile</small>
         </div>
         <ul class="footer__links">
-          <li class="footer__link-item"><a href="/index.html" class="footer__link">top</a></li>
-          <li class="footer__link-item"><a href="/about.html" class="footer__link">about</a></li>
-          <li class="footer__link-item"><a href="/service.html" class="footer__link">service</a></li>
-          <li class="footer__link-item"><a href="/works.html" class="footer__link">works</a></li>
-          <li class="footer__link-item"><a href="/news.html" class="footer__link">news</a></li>
-          <li class="footer__link-item"><a href="/contact.html" class="footer__link">contact</a></li>
-          <li class="footer__link-item"><a href="/404.html" class="footer__link">プライバシーポリシー</a></li>
+          <li class="footer__link-item"><a href="./index.html" class="footer__link">top</a></li>
+          <li class="footer__link-item"><a href="./about.html" class="footer__link">about</a></li>
+          <li class="footer__link-item"><a href="./service.html" class="footer__link">service</a></li>
+          <li class="footer__link-item"><a href="./works.html" class="footer__link">works</a></li>
+          <li class="footer__link-item"><a href="./news.html" class="footer__link">news</a></li>
+          <li class="footer__link-item"><a href="./contact.html" class="footer__link">contact</a></li>
+          <li class="footer__link-item"><a href="./404.html" class="footer__link">プライバシーポリシー</a></li>
         </ul>
       </div>
     </div>
