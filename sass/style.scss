@@ -1253,28 +1253,31 @@
 .page-link__item{
     display: flex;
     align-items: center;
+    width: 83px;
 }
 
 .page-link__link{
     font-size: 16px;
-    line-height: 1.188;
+    line-height: calc(23/16);
     padding-right: 20px;
     color: $navy;
     @include mq("md"){
         font-size: 12px;
         padding-right: 6px;
+        line-height: calc(17/12);
     }
 }
 
 .page-link__item::after{
     display: block;
     content: "";
-    width: 5px;
-    height: 5px;
+    width: 6px;
+    height: 6px;
     transform: rotate(45deg);
     border-right: 1px solid $navy;
     border-bottom: 1px solid $navy;
-    margin-left: -9px;
+    margin-left: -8px;
+    margin-top: -4px;
     @include mq("md"){
         margin-left: 0;
     }
@@ -1287,13 +1290,14 @@
     @include mq("md"){
         margin-top: 60px;
         font-size: 18px;
+        line-height: calc(37/18);
     }
 }
 
 .concept__text{
     margin-top: 40px;
     @include mq("md"){
-    margin-top: 30px;
+        margin-top: 30px;
     }
 }
 
@@ -1316,17 +1320,18 @@
     width: 100%;
     background-color: $bg;
     display: flex;
-    align-items: center;
     column-gap: 30px;
     @include mq("md"){
         flex-direction: column;
         row-gap: 30px;
         padding: 60px 20px 0;
+        align-items: center;
     }
 }
 
 .philosophy__text-body{
-    padding: 70px 0 0 32px;
+    padding-top: 70px;
+    padding-left: 32px;
     @include mq("md"){
         padding: 0;
     }
@@ -1340,9 +1345,11 @@
 }
 
 
-.philosophy__name{
+.philosophy__name.text{
     margin-top: 40px;
+    margin-right: 11px;
     text-align: right;
+    line-height: calc(19/16);
     @include mq("md"){
         margin-top: 30px;
     }
@@ -1361,10 +1368,10 @@
 .about-subheading{
     font-size: 16px;
     font-weight: $medium;
-    line-height: 1.4375;
+    line-height: calc(23/16);
     @include mq("md"){
         font-size: 12px;
-        line-height: 1.4167;
+        line-height: calc(17/12);
     }
 }
 
@@ -1373,11 +1380,12 @@
     align-items: center;
     font-size: 40px;
     font-weight: $medium;
-    line-height: 1.475;
+    line-height: calc(59/40);
     text-transform: capitalize;
+    letter-spacing: 0.03em;
     @include mq("md"){
         font-size: 26px;
-        line-height: 1.5;
+        line-height: calc(39/26);
     }
 }
 
@@ -1393,7 +1401,7 @@
     }
 }
 
-// アバウトページAccess 
+// アバウトページAccess
 
 .access{
     margin-top: 120px;
@@ -1413,6 +1421,7 @@
 .access__post.text,
 .access__address.text{
     font-family: "Noto Sans JP" ,sans-serif;
+    line-height: calc(19/16);
 }
 
 .address__map{
@@ -1442,12 +1451,12 @@
 
 .company__item{
     display: flex;
-    padding-bottom: 40px;
+    padding-bottom: 39px;
     border-bottom: 1px solid $gray-line;
     @include mq("md"){
         flex-direction: column;
         row-gap: 16px;
-        padding-bottom: 20px;
+        padding-bottom: 19px;
     }
 }
 
@@ -1461,11 +1470,11 @@
 .company__label,
 .company__text{
     font-size: 16px;
-    line-height: 1.4375;
+    line-height: calc(23/16);
     font-family: "Noto Sans JP", sans-serif;
     @include mq("md"){
         font-size: 14px;
-        line-height: 1.4286;
+        line-height: calc(20/14);
     }
 }
 
@@ -1496,6 +1505,14 @@
     }
 }
 
+.company__content:nth-child(3),
+.company__content:nth-child(4){
+    margin-top: 1px;
+    @include mq("md"){
+        margin-top: 0;
+    }
+}
+
 // アバウトページスワイパー
 .about-swiper{
     margin-top: 120px;
@@ -1511,6 +1528,9 @@
 
 .about-swiper .swiper-slide{
     margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     @include mq("md"){
         margin-left: 4px;
     }
@@ -1519,14 +1539,13 @@
 .about-swiper .swiper-slide img{
     width: 100%;
     height: auto;
-    margin-left: 10px;
+    max-width: 480px;
+    max-height: 400px;
+    object-fit: cover;
     @include mq("sp"){
         width: 180px;
         height: 150px;
-        object-fit: cover;
-        margin-left: 4px;
     }
-
 }
 
 // サービスページ
