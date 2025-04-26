@@ -27,7 +27,7 @@ const aboutSwiper = new Swiper(".about-swiper", {
   speed: 4000, // ループの時間
   allowTouchMove: false, // スワイプ無効
   breakpoints:{
-    375:{
+    376:{
       slidesPerView: 3,
     },
   },
@@ -36,6 +36,18 @@ const aboutSwiper = new Swiper(".about-swiper", {
     disableOnInteraction: false,
   },
 });
+// var aboutswiper = new Swiper('.about-swiper', {
+//   slidesPerView: 'auto',
+//   spaceBetween: 20,
+//   loop: true,
+//   speed: 3000, // アニメーション速度
+//   autoplay: {
+//     delay: 0,
+//     disableOnInteraction: false,
+//     reverseDirection: false // 右から左
+//   },
+//   grabCursor: true,
+// });
 
 // 要素までスクロールしたらふわっと出てくるアニメーション
 
