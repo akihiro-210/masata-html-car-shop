@@ -1133,17 +1133,22 @@ select::-ms-expand {
   }
 }
 
-.bottom-contact__img {
+.bottom-contact picture {
   width: 56.9444444444%;
-  aspect-ratio: 410/223;
-  -o-object-fit: cover;
-     object-fit: cover;
+  aspect-ratio: 820/446;
 }
 @media screen and (max-width: 768px) {
-  .bottom-contact__img {
+  .bottom-contact picture {
     width: 100%;
     aspect-ratio: 375/240;
   }
+}
+
+.bottom-contact__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .bottom-contact__body {
@@ -1156,6 +1161,7 @@ select::-ms-expand {
 @media screen and (max-width: 768px) {
   .bottom-contact__body {
     width: 100%;
+    padding: 80px 25px 83px;
   }
 }
 
@@ -1212,6 +1218,12 @@ select::-ms-expand {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .bottom-contact__button {
+    padding: 18px 20px 17px;
+  }
+}
+
 .bottom-contact__tel {
   line-height: 1.1818181818;
   padding: 17px 20px 23px;
@@ -1219,6 +1231,7 @@ select::-ms-expand {
 @media screen and (max-width: 768px) {
   .bottom-contact__tel {
     line-height: 1.1875;
+    padding: 18px 20px 21px;
   }
 }
 
@@ -1287,7 +1300,7 @@ select::-ms-expand {
   .bottom-contact__note {
     margin-top: 10px;
     font-size: 12px;
-    line-height: 1.4166666667;
+    line-height: 1.1666666667;
   }
 }
 
@@ -1488,8 +1501,8 @@ select::-ms-expand {
   height: inherit;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: bottom;
-     object-position: bottom;
+  -o-object-position: center;
+     object-position: center;
 }
 
 .concept {
@@ -1527,6 +1540,11 @@ select::-ms-expand {
   display: flex;
   align-items: center;
   width: 83px;
+}
+@media screen and (max-width: 768px) {
+  .page-link__item {
+    width: 63px;
+  }
 }
 
 .page-link__link {
@@ -1600,22 +1618,24 @@ select::-ms-expand {
 .philosophy__wrap {
   width: 100%;
   background-color: #F8F8F8;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 360px;
   -moz-column-gap: 30px;
        column-gap: 30px;
+  align-items: center;
 }
 @media screen and (max-width: 768px) {
   .philosophy__wrap {
+    display: flex;
     flex-direction: column;
-    row-gap: 30px;
+    row-gap: 33px;
     padding: 60px 20px 0;
     align-items: center;
   }
 }
 
 .philosophy__text-body {
-  padding-top: 70px;
-  padding-left: 32px;
+  padding: 10px 0 10px 32px;
 }
 @media screen and (max-width: 768px) {
   .philosophy__text-body {
@@ -1641,19 +1661,27 @@ select::-ms-expand {
 @media screen and (max-width: 768px) {
   .philosophy__name.text {
     margin-top: 30px;
+    margin-right: 0;
+    line-height: 1.2142857143;
+  }
+}
+
+.philosophy__wrap picture {
+  width: 360px;
+  aspect-ratio: 360/535;
+}
+@media screen and (max-width: 768px) {
+  .philosophy__wrap picture {
+    width: 335px;
+    aspect-ratio: 335/300;
   }
 }
 
 .philosophy__img {
-  width: 360px;
-  aspect-ratio: 72/107;
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-}
-@media screen and (max-width: 768px) {
-  .philosophy__img {
-    width: 335px;
-  }
 }
 
 .about-subheading {
@@ -1695,11 +1723,17 @@ select::-ms-expand {
 @media screen and (max-width: 768px) {
   .about-heading::after {
     margin-left: 10px;
+    margin-bottom: 1px;
   }
 }
 
 .access {
   margin-top: 120px;
+}
+@media screen and (max-width: 768px) {
+  .access {
+    margin-top: 80px;
+  }
 }
 
 .access__addresses {
@@ -1721,6 +1755,12 @@ select::-ms-expand {
   font-family: "Noto Sans JP", sans-serif;
   line-height: 1.1875;
 }
+@media screen and (max-width: 768px) {
+  .access__post.text,
+  .access__address.text {
+    line-height: 1.4285714286;
+  }
+}
 
 .address__map {
   margin-top: 64px;
@@ -1739,6 +1779,12 @@ select::-ms-expand {
   margin-top: 120px;
   padding: 70px 0 120px;
   background-color: #F8F8F8;
+}
+@media screen and (max-width: 768px) {
+  .company {
+    margin-top: 80px;
+    padding: 60px 0 80px;
+  }
 }
 
 .company__items {
@@ -1852,7 +1898,7 @@ select::-ms-expand {
   justify-content: center;
   align-items: center;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 375px) {
   .about-swiper .swiper-slide {
     margin-left: 4px;
   }

@@ -90,7 +90,11 @@
           <h1 class="sub-mv__title">about</h1>
           <p class="sub-mv__subtitle">私たちについて</p>
         </div>
-        <img src="./images/Aboutpage/FV-aboutpage-img.jpg" alt="" class="sub-mv__img delay-no1 fade-up">
+        <picture class="delay-no1 fade-up">
+          <source srcset="./images/Aboutpage/FV-aboutpage-img.jpg" media="(min-width: 1024px)">
+          <img src="./images/Aboutpage/FV-aboutpage-sp-img.jpg" alt="about-page-mv" class="sub-mv__img">
+        </picture>
+        <!-- <img src="./images/Aboutpage/FV-aboutpage-img.jpg" alt="" class=" delay-no1 fade-up"> -->
       </div>
     </div>
 <!-- パンクズリスト -->
@@ -108,7 +112,7 @@
           </ul>
         </nav>
         <p class="concept__title">国境を超え、メーカーを超え<br>「型にはまらない」あなただけの歓びを</p>
-        <p class="concept__text text">弊社は、輸入車選びのすべてを見つめ直し、新たなスタイルを提案するインポート・セレクト・ブランドです。<br>これまでの憧れだけや批評家の意見といったイメージで選ぶのではなく、オーナー様となる方がクルマから直接感じるリアルな感性を第一にした、最良の一台との出会いをコーディネートいたします。</p>
+        <p class="concept__text text">弊社は、輸入車選びのすべてを見つめ直し、新たなスタイルを提案するインポート・セレクト・ブランドです。<br class="md-none">これまでの憧れだけや批評家の意見といったイメージで選ぶのではなく、オーナー様となる方がクルマから直接感じるリアルな感性を第一にした、最良の一台との出会いをコーディネートいたします。</p>
       </div>
     </div>
 <!-- 経営理念　Philosophy -->
@@ -121,7 +125,10 @@
             <p class="philosophy__text text">「お客様とは一生涯のお付き合い」をモットーとし、同時に社員一人一人が責任と誇り、使命感を持ち日々の仕事にやりがいと喜びを感じることができる会社を目指します。そういう「社員満足」があってこそ、本当の「お客様に満足」が可能になり、そしてお客様のご満足がさらに社員の満足を高めてくれるからです。心の豊かさは楽とかゆとりとかいうより仕事の充実感に求めねばなりません。我々は現状に満足することなく挑戦し続けます。</p>
             <p class="philosophy__name text">代表取締役&emsp;田中太郎</p>
           </div>
-          <img src="./images/Aboutpage/profile-aboutpage-img.jpg" alt="" class="philosophy__img">
+          <picture>
+            <source srcset="./images/Aboutpage/profile-aboutpage-img.jpg" media="(min-width: 1024px)">
+            <img src="./images/Aboutpage/profile-aboutpage-sp-img.jpg" alt="profile-img" class="philosophy__img" width="335" height="300">
+          </picture>
         </div>
       </div>
     </section>
@@ -210,7 +217,10 @@
 
   <footer class="footer">
     <div class="bottom-contact">
-      <img src="/images/Toppage/Footer-toppage-img.jpg" alt="" class="bottom-contact__img">
+      <picture>
+        <source srcset="./images/Toppage/Footer-toppage-img.jpg" media="(min-width: 1024px)">
+        <img src="./images/Toppage/Footer-toppage-sp-img.jpg" alt="footer-img" class="bottom-contact__img" width="375" height="240">
+      </picture>
       <div class="bottom-contact__body">
         <div class="bottom-contact__body-inner">
           <p class="bottom-contact__text">輸入車の購入や修理のご相談など<br>お気軽にお問い合わせください。</p>
@@ -223,24 +233,24 @@
     <div class="footer__inner">
       <div class="footer__wrap">
         <div class="footer__logos">
-          <a href="/index.html">
-            <img src="/images/Toppage/icon-logo-navy.svg" alt="" class="footer__logo">
+          <a href="./index.html" class="footer__logo-link">
+            <img src="./images/Toppage/icon-logo-navy.svg" alt="ExciteCodeNavy" class="footer__logo">
           </a>
           <ul class="footer__icons">
-            <li class="footer__icon"><a href="/404.html" class="footer__icon-link"><i class="fa-brands fa-facebook"></i></a></li>
-            <li class="footer__icon"><a href="/404.html" class="footer__icon-link"><i class="fa-brands fa-twitter"></i></a></li>
-            <li class="footer__icon"><a href="/404.html" class="footer__icon-link"><i class="fa-brands fa-instagram"></i></a></li>
+            <li class="footer__icon"><a href="./404.html" class="footer__icon-link"><i class="fa-brands fa-facebook"></i></a></li>
+            <li class="footer__icon"><a href="./404.html" class="footer__icon-link"><i class="fa-brands fa-twitter"></i></a></li>
+            <li class="footer__icon"><a href="./404.html" class="footer__icon-link"><i class="fa-brands fa-instagram"></i></a></li>
           </ul>
           <small class="footer__copyright">&copy;2022&nbsp;ExciteCode&nbsp;Automobile</small>
         </div>
         <ul class="footer__links">
-          <li class="footer__link-item"><a href="/index.html" class="footer__link">top</a></li>
-          <li class="footer__link-item"><a href="/about.html" class="footer__link">about</a></li>
-          <li class="footer__link-item"><a href="/service.html" class="footer__link">service</a></li>
-          <li class="footer__link-item"><a href="/works.html" class="footer__link">works</a></li>
-          <li class="footer__link-item"><a href="/news.html" class="footer__link">news</a></li>
-          <li class="footer__link-item"><a href="/contact.html" class="footer__link">contact</a></li>
-          <li class="footer__link-item"><a href="/404.html" class="footer__link">プライバシーポリシー</a></li>
+          <li class="footer__link-item"><a href="./index.html" class="footer__link">top</a></li>
+          <li class="footer__link-item"><a href="./about.html" class="footer__link">about</a></li>
+          <li class="footer__link-item"><a href="./service.html" class="footer__link">service</a></li>
+          <li class="footer__link-item"><a href="./works.html" class="footer__link">works</a></li>
+          <li class="footer__link-item"><a href="./news.html" class="footer__link">news</a></li>
+          <li class="footer__link-item"><a href="./contact.html" class="footer__link">contact</a></li>
+          <li class="footer__link-item"><a href="./404.html" class="footer__link">プライバシーポリシー</a></li>
         </ul>
       </div>
     </div>
