@@ -950,6 +950,7 @@
 .bottom-contact__text{
     font-size: 18px;
     line-height: calc(30/18);
+    font-weight: $regular;
     @include mq("md"){
         padding-left: 6px;
         font-size: 14px;
@@ -970,6 +971,7 @@
     border-radius: 3px;
     transition: 0.5s;
     font-family: "Noto Sans JP",sans-serif;
+    font-weight: $regular;
     @include mq("md"){
         font-size: 16px;
         line-height: calc(23/16);
@@ -1267,9 +1269,10 @@
 .page-link__item{
     display: flex;
     align-items: center;
-    width: 83px;
+    width: fit-content;
+    padding-right: 1px;
     @include mq("md"){
-        width: 63px;
+        padding-right: 3px;
     }
 }
 
@@ -1593,6 +1596,10 @@
 .service{
     margin-top: 120px;
     margin-bottom: 120px;
+    @include mq("md"){
+        margin-top: 50px;
+        margin-bottom: 80px;
+    }
 }
 
 .service__inner{
@@ -1615,7 +1622,7 @@
     width: 100%;
     display: flex;
     background-color: $bg;
-    @include mq("lg"){
+    @include mq("md"){
         flex-direction: column;
         row-gap: 20px;
         align-items: center;
@@ -1627,8 +1634,8 @@
 
 .service__body{
     position: relative;
-    width: 46.7%;
-    @include mq("lg"){
+    width: calc(100% * 560/1200);
+    @include mq("md"){
         width: 100%;
     }
 }
@@ -1636,26 +1643,29 @@
 .service__titles{
     position: absolute;
     padding-right: 19.82%;
-    top: 19.82%;
-    left: 8.93%;
-    @include mq("lg"){
+    top: 50%;
+    left: calc(100% * 50/560);
+    transform: translateY(-50%);
+    @include mq("md"){
+        margin-top: 60px;
         position: initial;
         margin-left: auto;
         margin-right: auto;
         padding-right: 0;
+        transform: translateY(0);
     }
 }
 
 .service__number{
     font-size: 40px;
-    font-weight: $medium;
-    line-height: 1.475;
+    font-weight: $bold;
+    line-height: calc(59/40);
     color: $navy02;
     display: flex;
     align-items: center;
     @include mq("lg"){
         font-size: 32px;
-        line-height: 1.469;
+        line-height: calc(47/32);
     }
 }
 
@@ -1675,11 +1685,11 @@
 .service__title{
     margin-top: 20px;
     font-size: 28px;
-    font-weight: $medium;
-    line-height: 1.214;
+    font-weight: $bold;
+    line-height: calc(34/28);
     @include mq("lg"){
         font-size: 20px;
-        line-height: 1.45;
+        line-height: calc(29/20);
     }
 }
 
@@ -1696,13 +1706,14 @@
 }
 
 .service__img{
-    width: 53.3%;
+    width: calc(100% * 640/1200);
     max-width: 640px;
-    aspect-ratio: 32/25 ;
+    aspect-ratio: 640/500 ;
     object-fit: cover;
-    @include mq("lg"){
+    @include mq("md"){
         width: 100%;
-        max-width: 380px;
+        max-width: 728px;
+        aspect-ratio: 335/220;
     }
 }
 
@@ -1878,7 +1889,6 @@
     }
 }
 
- 
 .view-heading__main-title{
     font-size: 26px;
     font-weight: $medium;
@@ -2274,13 +2284,16 @@
 // ワークス記事ページ
 .works-view .breadcrumbs--works-view{
     margin-top: 200px;
+    text-align: right;
+    font-size: 15px;
+    line-height: calc(18/15);
 }
 
 .works-view__inner.inner{
     margin-top: 60px;
     margin-bottom: 120px;
-    max-width: 840px;
-    padding: 0 30px;
+    max-width: 900px;
+    padding-inline: 30px;
     @include mq("md"){
         margin-top: 30px;
         margin-bottom: 80px;
@@ -2991,6 +3004,7 @@ span[property=name].current-item{
     font-size: 16px;
     line-height: calc(38/16);
     font-family: "Noto Sans JP",sans-serif;
+    font-weight: $regular;
     @include mq("md"){
         font-size: 14px;
         line-height: calc(32/14);
