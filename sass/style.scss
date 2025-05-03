@@ -2102,7 +2102,6 @@
     }
 }
 
-
 // ニュースページ ページネーション
 .nav-links{
     margin-top: 40px;
@@ -2261,7 +2260,7 @@
     display: grid;
     align-items: flex-start;
     grid-template-columns: calc(100% * 262/1098) calc(100% * 836/1098);
-    padding-inline: 20px 19px;
+    padding-inline: 23px 19px;
     @include mq("md"){
         display: flex;
         flex-direction: column;
@@ -2290,11 +2289,12 @@
         width: 100%;
         flex-direction: initial;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
         width: 100%;
         flex-direction: initial;
         flex-wrap: wrap;
         row-gap: 15px;
+        column-gap: 37px;
         justify-content: space-between;
     }
 }
@@ -2302,9 +2302,14 @@
 .works__categories .category__item{
     height: 20px;
     line-height: 1.5;
+    padding-left: 14px;
     @include mq("md"){
         height: 17px;
     }
+}
+
+.works__categories .category__item.current::before{
+    left: 0;
 }
 
 .works__right{
@@ -2331,7 +2336,6 @@
     grid-template-columns: calc(100% * 160/776) auto;
     padding-bottom: 29px;
     border-bottom: 1px solid $gray-line;
-    align-items: flex-start;
     @include mq("md"){
         column-gap: 15px;
         grid-template-columns: calc(100% * 130/295) auto;
@@ -2359,10 +2363,9 @@
 .works__contents{
     display: flex;
     flex-flow: column;
-    // max-width: calc(100% * 528/776);
     justify-content: space-between;
     @include mq("md"){
-        // max-width: calc(100% * 150/295);
+        justify-content: space-between;
     }
 }
 
@@ -2388,22 +2391,52 @@
     }
 }
 
-.works__title{
+.works-content__title{
     margin-top: 30px;
+    line-height: 1;
+    @include mq("md"){
+        margin-top: 10px;
+    }
+}
+
+.works__item:nth-child(4) .works-content__title,
+.works__item:nth-child(5) .works-content__title{
+    @include mq("md"){
+        margin-top: 8px;
+    }
+}
+
+
+.works__title{
+    width: fit-content;
     font-size: 18px;
     font-weight: $medium;
     line-height: calc(32/18);
     color: $black;
-    font-family: "Noto Sana Jp",sans-serif;
+    font-family: "Noto Sans JP",sans-serif;
     @include mq("md"){
-        margin-top: 10px;
         font-size: 14px;
         line-height: 2;
+        overflow: hidden;
+        display: -webkit-box;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
     }
 }
 
 .works__date{
-    // margin-top: auto;
+    margin-top: auto;
+    @include mq("md"){
+        margin-top: 10px;
+    }
+}
+
+.works__item:nth-child(4) .works__date,
+.works__item:nth-child(5) .works__date{
+    @include mq("md"){
+        margin-top: 8px;
+    }
 }
 
 .works__pagination{
@@ -3226,11 +3259,18 @@ span[property=name].current-item{
 }
 
 .hover-line{
-    // display: inline;
-    background: linear-gradient($navy02,$navy02) 0 100%/0 1px no-repeat;
-    text-decoration: none;
-    transition: background 0.5s;
-    &:hover{
+    background-image: linear-gradient($navy02,$navy02); /* 線の色 */
+    background-position: left bottom; /* 線の起点を左・下に設定 */
+    background-repeat: no-repeat;
+    background-size: 0 1px; /* 線の横幅を0、縦幅を2pxに */
+    // // display: inline;
+    // // background: linear-gradient($navy02,$navy02) 0 100%/0 1px no-repeat;
+    // // text-decoration: none;
+    transition: background-size 0.5s;
+}
+
+@media (hover: hover) {
+    .hover-line:hover {
         background-size: 100% 1px;
         opacity: 1;
     }
