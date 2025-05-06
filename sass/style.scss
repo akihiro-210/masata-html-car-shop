@@ -413,7 +413,7 @@
 }
 
 .top-about__content{
-    margin-top: -25px;
+    margin-top: -33px;
     @include mq("md"){
         margin-top: 0;
     }
@@ -452,6 +452,13 @@
     }
 }
 
+.top-service__inner.inner{
+    padding-inline: 20px 19px;
+    @include mq("md"){
+        padding-inline: 20px;
+    }
+}
+
 .top-heading--right{
     text-align: right;
     @include mq("md"){
@@ -467,7 +474,7 @@
     text-transform: capitalize;
     @include mq("md"){
         font-size: 38px;
-        line-height: 1.474;
+        line-height: calc(56/38);
     }
 }
 
@@ -480,13 +487,13 @@
     margin-top: 40px;
     align-items: center;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(355px,355px));
+    grid-template-columns: repeat(3,1fr);
     justify-content: center;
-    column-gap: 17px;
+    column-gap: 18px;
     row-gap: 50px;
     @include mq("md"){
         margin-top: 20px;
-        grid-template-columns: repeat(auto-fit,minmax(335px,335px));
+        grid-template-columns: repeat(1,1fr);
     }
 }
 
@@ -564,7 +571,7 @@
     padding: 120px 0;
     background-color: $bg;
     @include mq("md"){
-        padding: 60px 0 80px;
+        padding: 60px 0 77px;
     }
 }
 
@@ -593,7 +600,7 @@
 .top-works__container{
     width: 100%;
     margin-top: 40px;
-    padding: 0 40px 50px;
+    padding: 0 40px 46px;
     background-color: $white;
     @include mq("md"){
         margin-top: 20px;
@@ -637,7 +644,8 @@
 }
 
 .top-article__title{
-    margin-top: 33px;
+    margin-top: 30px;
+    padding-bottom: 10px;
     font-size: 24px;
     line-height: calc(29/24);
     font-weight: $medium;
@@ -656,7 +664,7 @@
 }
 
 .top-article__text{
-    margin-top: 36px;
+    margin-top: 26px;
     font-size: 16px;
     line-height: calc(38/16);
     color: $gray;
@@ -670,12 +678,12 @@
 .top-article__date{
     margin-top: 17px;
     @include mq("md"){
-        margin-top: 12px;
+        margin-top: 2px;
     }
 }
 
 .top-works__link-wrap{
-    margin-top: 32px;
+    margin-top: 36px;
     text-align: right;
 }
 
@@ -685,7 +693,7 @@
     padding-bottom: 120px;
     background-color: $bg;
     @include mq("md"){
-        padding-bottom: 72px;
+        padding-bottom: 70px;
     }
 }
 
@@ -703,18 +711,18 @@
 
 .top-news__categories{
     margin-top: 45px;
-    padding-left: 20px;
+    padding-left: 3px;
     padding-right: 20px;
     display: flex;
     flex-direction: column;
     row-gap: 23px;
     @include mq("md"){
         flex-direction: initial;
-        padding-left: 34px;
+        padding-left: 17px;
         margin-top: 40px;
         flex-wrap: wrap;
         row-gap: 15px;
-        column-gap: 40px;
+        column-gap: 24px;
     }
 }
 
@@ -746,6 +754,12 @@
     background-color: $navy02;
     @include mq("md"){
         left: 0;
+    }
+}
+
+.top-news__categories .category__item.current::before{
+    @include mq("md"){
+        left: 3px;
     }
 }
 
@@ -818,14 +832,14 @@
 .news-list__item:first-child{
     @include mq("md"){
         border-top: 1px solid $gray-line;
-        padding-top: 20px;
+        padding-top: 19px;
     }
 }
 
 .news-list__item:not(:first-child){
     padding-bottom: 25px;
     @include mq("md"){
-        padding-bottom: 15px;
+        padding-bottom: 14px;
     }
 }
 
@@ -900,7 +914,7 @@
     margin-top: 32px;
     text-align: right;
     @include mq("md"){
-        margin-top: 37px;
+        margin-top: 40px;
     }
 }
 
@@ -1930,14 +1944,6 @@
     }
 }
 
-.view-categories__tag.tag{
-    height: 24px;
-    padding-inline: 22px;
-    @include mq("md"){
-        padding-inline: 15px;
-    }
-}
-
 .view-heading__main-title{
     font-size: 26px;
     font-weight: $medium;
@@ -2133,6 +2139,11 @@
 .nav-previous a,
 .nav-next a{
     color: $navy02;
+    width: 100%;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .nav-link__next{
@@ -2141,7 +2152,7 @@
 
  .nav-previous .arrow-before,
  .nav-next .arrow-after{
-    padding-bottom: 2px;
+    // padding-bottom: 2px;
  }
 
 // ニュース記事　サイドバー
@@ -2376,21 +2387,6 @@
     column-gap: 5px;
 }
 
-.works__tag.tag{
-    font-size: 11px;
-    line-height: 1;
-    height: 24px;
-    display: flex;
-    padding-inline: 18px;
-    width: fit-content;
-    align-items: center;
-    justify-content: center;
-    @include mq("md"){
-        font-size: 10px;
-        padding-inline: 15px;
-    }
-}
-
 .works-content__title{
     margin-top: 30px;
     line-height: 1;
@@ -2547,6 +2543,10 @@
     border-radius: 4px;
     font-size: 14px;
     font-weight: $medium;
+}
+
+.works-view__button .arrow-before{
+    margin-top: 2px;
 }
 
 // コンタクトページ
@@ -2758,10 +2758,103 @@
     max-width: 720px;
 }
 
-.confirm__form{
-    margin-top: 100px;
+.confirm__text{
+    line-height: calc(19/16);
+    font-weight: $regular;
+    @include mq("md"){
+        line-height: calc(20/14);
+    }
+}
+
+.contact-confirm{
+    margin-top: 104px;
     @include mq("md"){
         margin-top: 40px;
+    }
+}
+
+.contact__item{
+    display: grid;
+    grid-template-columns: calc(100% * 192/680) calc(100% * 488/680);
+    @include mq("md"){
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.contact__item:not(:first-child){
+    margin-top: 40px;
+    @include mq("md"){
+        margin-top: 30px;
+    }
+}
+
+.contact__term{
+    width: 192px;
+    font-size: 15px;
+    line-height: calc(22/15);
+    font-weight: $medium;
+    @include mq("md"){
+        width: 100%;
+    }
+}
+
+.contact__required{
+    color: #E20000;
+}
+
+.contact__definition{
+    font-size: 14px;
+    line-height: calc(20/14);
+    font-family: "Noto Sans JP",sans-serif;
+    font-weight: $regular;
+    @include mq("md"){
+        margin-top: 10px;
+    }
+}
+
+.contact__item:last-child .contact__definition{
+    line-height: calc(32/14);
+}
+
+.contact-confirm .contact__buttons{
+    margin-top: 40px;
+    padding-right: 40px;
+    @include mq("md"){
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+}
+
+.contact-confirm .contact__buttons p{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.wpcf7-form-control.wpcf7-previous.contact__back-button,
+.wpcf7-form-control.wpcf7-submit.has-spinner.contact__submit-input{
+    font-size: 18px;
+    width: 280px;
+    height: 66px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid $navy;
+    border-radius: 3px;
+    @include mq("md"){
+        font-size: 14px;
+        width: 151px;
+        height: 43px;
+    }
+}
+
+.wpcf7-form-control.wpcf7-submit.has-spinner.contact__submit-input{
+    margin-left: 80px;
+    color: $white;
+    background-color: $navy;
+    @include mq("md"){
+        margin-left: 0;
     }
 }
 
@@ -2818,23 +2911,24 @@
 }
 
 .thanks__link{
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 460px;
-    padding-top: 20px;
-    padding-bottom: 24px;
-    padding-right: 15px;
+    height: 66px;
+    padding-bottom: 4px;
+    padding-right: 14px;
     font-size: 18px;
-    line-height: 1.222;
     color: $white;
     background-color: $navy;
     border-radius: 4px;
-    text-align: center;
     font-family: "Noto Sans JP", sans-serif;
     @include mq("md"){
         width: 275px;
-        padding: 11.5px;
+        height: 43px;
+        padding-bottom: 0;
+        padding-right: 0;
         font-size: 14px;
-        line-height: 1.429;
     }
 }
 
@@ -2917,13 +3011,13 @@
 }
 
 .error__link{
-    display: inline-block;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 145px;
-    padding: 11px;
+    height: 44px;
     color: $white;
     font-size: 14px;
-    line-height: 1.429;
     font-family: "Noto Sans JP",sans-serif;
     border: 1px solid $white;
     border-radius: 4px;
@@ -3169,7 +3263,7 @@ span[property=name].current-item{
 .inner{
     width: 100%;
     max-width: 1140px;
-    padding-inline: 0 20px;
+    padding-inline: 20px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -3200,18 +3294,23 @@ span[property=name].current-item{
     align-items: center;
     justify-content: center;
     width: 141px;
-    padding-top: 13px;
-    padding-bottom: 13px;
+    height: 44px;
+    line-height: initial;
     border: 1px solid $navy;
     border-radius: 4px;
+    padding-top: 0.25em;
 }
 
 // READ MORE 矢印
 .arrow-after{
    display: inline-block;
-   padding-bottom: 4px;
+//    padding-bottom: 3px;
    transition: margin 0.5s;
    font-weight: $medium;
+}
+
+.hover-line .arrow-after{
+    padding-bottom: 0.2em;
 }
 
 .arrow-after::after{
@@ -3228,7 +3327,7 @@ span[property=name].current-item{
 // 前に戻る矢印
 .arrow-before{
     display: inline-block;
-    padding-bottom: 4px;
+    // padding-bottom: 4px;
     transition: margin 0.5s;
     font-weight: $medium;
 }
@@ -3242,6 +3341,7 @@ span[property=name].current-item{
     border-top: 1px solid $navy02;
     border-left: 1px solid $navy02;
     transform: rotate(-45deg);
+    // margin-top: 5px;
 }
 
 .hover-wide:hover{
@@ -3278,17 +3378,18 @@ span[property=name].current-item{
 
 // タグ
 .tag{
-    display: inline-block;
-    padding: 4px 18px;
+    display: flex;
+    align-items: center;
+    padding-inline: 18px;
+    height: 24px;
     background-color: $tag-bg;
     color: $gray;
     font-size: 11px;
     font-weight: $medium;
-    line-height: calc(13/11);
+    line-height: 1;
     @include mq("md"){
-        padding: 5px 15px;
+        padding-inline: 15px;
         font-size: 10px;
-        line-height: calc(14/10);
     }
 }
 

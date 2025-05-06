@@ -1,5 +1,43 @@
 $(function(){
 
+// ヘッダー高さを考慮したページスクロール
+document.addEventListener("DOMContentLoaded", () => {
+  const tempHash = window.location.hash;
+  if (tempHash) {
+    // ブラウザによる自動スクロールを阻止
+    history.replaceState(null, null, window.location.pathname + window.location.search);
+    window.scrollTo(0, 0); // Safari用に強制スクロールトップ
+  }
+
+  $(window).on("load", function () {
+    if (tempHash) {
+      const $target = $(tempHash);
+      // DOMが完全に反映されていないケースへの対処
+      const tryScroll = () => {
+        const headerHeight = $(".js-header").height();
+        if ($target.length && $target.offset()) {
+          const position = $target.offset().top - headerHeight;
+          $("html, body").animate({ scrollTop: position }, 500, "swing");
+          // hashを戻す（必要であれば）
+          history.replaceState(null, null, tempHash);
+          } else {
+            setTimeout(tryScroll, 100);
+          }
+      };
+      setTimeout(tryScroll, 600);
+    }
+  });
+  // ページ内リンクのクリック
+  $('a[href^="#"]').on("click", function (e) {
+    e.preventDefault();
+    const href = $(this).attr("href");
+    const target = $(href === "#" || href === "" ? "html" : href);
+    const headerHeight = $(".js-header").height();
+    const position = target.offset().top - headerHeight;
+    $("html, body").animate({ scrollTop: position }, 500, "swing");
+  });
+});
+
 // ハンバーガーメニュー
 $(".js-hamburger,.js-drawer,.js-circle-bg").click(function () {
     $(".js-hamburger").toggleClass("is-active");
@@ -16,6 +54,7 @@ const swiper = new Swiper(".mv__swiper", {
   allowTouchMove: false,
   autoplay: {
     delay: 3000,
+    // disableOnInteraction: false,
   },
 });
 
@@ -36,18 +75,6 @@ const aboutSwiper = new Swiper(".about-swiper", {
     disableOnInteraction: false,
   },
 });
-// var aboutswiper = new Swiper('.about-swiper', {
-//   slidesPerView: 'auto',
-//   spaceBetween: 20,
-//   loop: true,
-//   speed: 3000, // アニメーション速度
-//   autoplay: {
-//     delay: 0,
-//     disableOnInteraction: false,
-//     reverseDirection: false // 右から左
-//   },
-//   grabCursor: true,
-// });
 
 // 要素までスクロールしたらふわっと出てくるアニメーション
 
@@ -55,14 +82,6 @@ var pos = 0,
 winScrollTop = 0;
 
 function fadeAnime() {
-// $(".fade-in-trigger").each(function () {
-//   var elemPos = $(this).offset().top + 50;
-//   var scroll = $(window).scrollTop();
-//   var windowHeight = $(window).height();
-//   if (scroll >= elemPos - windowHeight) {
-//     $(this).addClass("fade-in");
-//   }
-// });
 
 $(".fade-up-trigger").each(function () {
   var elemPos = $(this).offset().top + 100;
@@ -99,41 +118,6 @@ $(".fade-right-trigger").each(function () {
     $(this).addClass("fade-right");
   }
 });
-
-// $(".show-trigger").each(function () {
-//   var elemPos = $(this).offset().top + 50;
-//   var scroll = $(window).scrollTop();
-//   var windowHeight = $(window).height();
-//   if (scroll >= elemPos - windowHeight) {
-//     $(this).fadeIn();
-//   }
-// });
-
-// $(".hide-trigger").each(function () {
-//   winScrollTop = $(window).scrollTop();
-//   if (winScrollTop <= pos) {
-//     if (!window.matchMedia("(max-width: 768px)").matches) {
-//       $(".hide-trigger").slideDown();
-//       $(".header__name").slideDown();
-//     } else {
-//       $(".hide-trigger").slideDown();
-//       $(".header__name").slideDown();
-//       $(".hamburger").fadeIn();
-//     }
-//   } else {
-//     if (!window.matchMedia("(max-width: 768px)").matches) {
-//       $(".hide-trigger").slideUp();
-//       $(".header__name").slideUp();
-//       $(".header__inner").removeClass("delay-no3");
-//     } else {
-//       $(".hide-trigger").slideUp();
-//       $(".header__name").slideUp();
-//       $(".hamburger").fadeOut();
-//     }
-//   }
-
-//   pos = winScrollTop;
-// });
 }
 
 $(window).scroll(function () {
@@ -143,6 +127,5 @@ fadeAnime();
 $(window).on("load", function () {
 fadeAnime();
 });
-
 
 })
