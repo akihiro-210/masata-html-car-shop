@@ -26,6 +26,7 @@ const swiper = new Swiper(".mv__swiper", {
   allowTouchMove: false,
   autoplay: {
     delay: 3000,
+    reverseDirection: true,
   },
 });
 

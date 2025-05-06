@@ -40,7 +40,7 @@
 <body>
   <header class="header js-header">
     <div class="header__inner">
-      <h1 class="header__name"><a href="./index.html"><img src="./images/Toppage/icon-logo-white.svg" alt="ExciteCodeWhite" class="header__logo"></a></h1>
+      <h1 class="header__name"><a href="./index.html"><img src="./images/icon-logo-white.svg" alt="ExciteCodeWhite" class="header__logo"></a></h1>
       <nav class="nav header__nav md-none">
         <ul class="header__items">
           <li class="header__item"><a href="./index.html" class="nav__item header__link">top</a></li>
@@ -61,7 +61,7 @@
 <!-- ドロワーメニュー -->
     <div class="drawer-menu js-drawer">
       <div class="drawer-menu__wrap">
-        <img src="/images/Toppage/icon-logo-navy.svg" class="drawer-menu__logo" alt="ドロワーロゴネイビー">
+        <img src="./images/icon-logo-navy.svg" class="drawer-menu__logo" alt="ExciteCodeNavy">
         <div class="drawer-menu__inner">
           <ul class="drawer-menu__items">
             <li class="drawer-menu__item"><a href="/index.html" class="drawer-menu__link">top</a></li>
@@ -91,7 +91,10 @@
           <h1 class="sub-mv__title">works</h1>
           <p class="sub-mv__subtitle">実績紹介</p>
         </div>
-        <img src="/images/FV-workspage-img.jpg" alt="" class="sub-mv__img delay-no1 fade-up">
+        <picture>
+          <source srcset="./images/works/mv-works-img.jpg" media="(min-width: 1024px)" class="delay-no1 fade-up">
+          <img src="./images/works/mv-works-sp-img.jpg" alt="works-page-mv" class="sub-mv__img delay-no1 fade-up">
+        </picture>
       </div>
     </div>
 <!-- パンクズリスト -->
@@ -112,7 +115,7 @@
           <div class="works__right">
             <ul class="works__items">
               <li class="works__item fade-down-trigger">
-                <img src="/images/works-content-thmbnail.jpg" alt="" class="works__item-thumbnail">
+                <img src="/images/works/works-content-thmbnail.jpg" alt="" class="works__item-thumbnail">
                 <div class="works__contents">
                   <div class="works__tags">
                     <a href=""><span class="works__tag tag">修理・整備</span></a>
@@ -122,7 +125,7 @@
                 </div>
               </li>
               <li class="works__item fade-down-trigger">
-                <img src="/images/works-content-thmbnail.jpg" alt="" class="works__item-thumbnail">
+                <img src="/images/works/works-content-thmbnail.jpg" alt="" class="works__item-thumbnail">
                 <div class="works__contents">
                   <div class="works__tags">
                     <a href=""><span class="works__tag tag">修理・整備</span></a>
@@ -132,7 +135,7 @@
                 </div>
               </li>
               <li class="works__item fade-down-trigger">
-                <img src="/images/works-content-thmbnail.jpg" alt="" class="works__item-thumbnail">
+                <img src="/images/works/works-content-thmbnail.jpg" alt="" class="works__item-thumbnail">
                 <div class="works__contents">
                   <div class="works__tags">
                     <a href=""><span class="works__tag tag">購入サポート</span></a>
@@ -142,7 +145,7 @@
                 </div>
               </li>
               <li class="works__item fade-down-trigger">
-                <img src="/images/works-content-thmbnail.jpg" alt="" class="works__item-thumbnail">
+                <img src="/images/works/works-content-thmbnail.jpg" alt="" class="works__item-thumbnail">
                 <div class="works__contents">
                   <div class="works__tags">
                     <a href=""><span class="works__tag tag">車検・点検</span></a>
@@ -152,7 +155,7 @@
                 </div>
               </li>
               <li class="works__item fade-down-trigger">
-                <img src="/images/works-content-thmbnail.jpg" alt="" class="works__item-thumbnail">
+                <img src="/images/works/works-content-thmbnail.jpg" alt="" class="works__item-thumbnail">
                 <div class="works__contents">
                   <div class="works__tags">
                     <a href=""><span class="works__tag tag">修理・整備</span></a>
@@ -162,7 +165,7 @@
                 </div>
               </li>
               <li class="works__item fade-down-trigger">
-                <img src="/images/works-content-thmbnail.jpg" alt="" class="works__item-thumbnail">
+                <img src="/images/works/works-content-thmbnail.jpg" alt="" class="works__item-thumbnail">
                 <div class="works__contents">
                   <div class="works__tags">
                     <a href=""><span class="works__tag tag">修理・整備</span></a>
@@ -186,8 +189,8 @@
   <footer class="footer">
     <div class="bottom-contact">
       <picture>
-        <source srcset="./images/Toppage/Footer-toppage-img.jpg" media="(min-width: 1024px)">
-        <img src="./images/Toppage/Footer-toppage-sp-img.jpg" alt="footer-img" class="bottom-contact__img" width="375" height="240">
+        <source srcset="./images/footer-top-img.jpg" media="(min-width: 1024px)">
+        <img src="./images/footer-top-sp-img.jpg" alt="footer-img" class="bottom-contact__img" width="820" height="426">
       </picture>
       <div class="bottom-contact__body">
         <div class="bottom-contact__body-inner">
@@ -202,7 +205,7 @@
       <div class="footer__wrap">
         <div class="footer__logos">
           <a href="./index.html" class="footer__logo-link">
-            <img src="./images/Toppage/icon-logo-navy.svg" alt="ExciteCodeNavy" class="footer__logo">
+            <img src="./images/icon-logo-navy.svg" alt="ExciteCodeNavy" class="footer__logo" width="258" height="180">
           </a>
           <ul class="footer__icons">
             <li class="footer__icon"><a href="./404.html" class="footer__icon-link"><i class="fa-brands fa-facebook"></i></a></li>
