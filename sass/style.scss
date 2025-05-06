@@ -1493,11 +1493,18 @@
 
 .address__map{
     margin-top: 64px;
-    width: 100%;
-    height: 400px;
     object-fit: cover;
     @include mq("md"){
         margin-top: 20px;
+    }
+}
+
+.address__map iframe{
+    width: 100%;
+    aspect-ratio: 1100/400;
+    object-fit: cover;
+    @include mq("md"){
+        aspect-ratio: 335/400;
     }
 }
 
@@ -1594,28 +1601,32 @@
 }
 
 .about-slider .swiper-wrapper{
+    display: flex;
     transition-timing-function: linear;
 }
 
 .about-swiper .swiper-slide{
+    width: clamp(180px, 33vw, 480px);
+    aspect-ratio: 480/400;
     margin-left: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    @include mq("sp"){
+    @include mq("md"){
+        aspect-ratio: 180/150;
         margin-left: 4px;
     }
 }
 
 .about-swiper .swiper-slide img{
     width: 100%;
+    aspect-ratio: 480/400;
     height: auto;
     max-width: 480px;
     max-height: 400px;
     object-fit: cover;
-    @include mq("sp"){
-        width: 180px;
-        height: 150px;
+    @include mq("md"){
+        aspect-ratio: 180/150;
     }
 }
 

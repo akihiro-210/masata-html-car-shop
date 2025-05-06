@@ -1,41 +1,13 @@
 $(function(){
 
 // ヘッダー高さを考慮したページスクロール
-document.addEventListener("DOMContentLoaded", () => {
-  const tempHash = window.location.hash;
-  if (tempHash) {
-    // ブラウザによる自動スクロールを阻止
-    history.replaceState(null, null, window.location.pathname + window.location.search);
-    window.scrollTo(0, 0); // Safari用に強制スクロールトップ
-  }
-
-  $(window).on("load", function () {
-    if (tempHash) {
-      const $target = $(tempHash);
-      // DOMが完全に反映されていないケースへの対処
-      const tryScroll = () => {
-        const headerHeight = $(".js-header").height();
-        if ($target.length && $target.offset()) {
-          const position = $target.offset().top - headerHeight;
-          $("html, body").animate({ scrollTop: position }, 500, "swing");
-          // hashを戻す（必要であれば）
-          history.replaceState(null, null, tempHash);
-          } else {
-            setTimeout(tryScroll, 100);
-          }
-      };
-      setTimeout(tryScroll, 600);
-    }
-  });
-  // ページ内リンクのクリック
-  $('a[href^="#"]').on("click", function (e) {
-    e.preventDefault();
-    const href = $(this).attr("href");
-    const target = $(href === "#" || href === "" ? "html" : href);
-    const headerHeight = $(".js-header").height();
-    const position = target.offset().top - headerHeight;
-    $("html, body").animate({ scrollTop: position }, 500, "swing");
-  });
+$('a[href^="#"]').on("click", function (e) {
+  e.preventDefault();
+  const href = $(this).attr("href");
+  const target = $(href === "#" || href === "" ? "html" : href);
+  const headerHeight = $(".js-header").height();
+  const position = target.offset().top - headerHeight;
+  $("html, body").animate({ scrollTop: position }, 500, "swing");
 });
 
 // ハンバーガーメニュー
@@ -54,7 +26,6 @@ const swiper = new Swiper(".mv__swiper", {
   allowTouchMove: false,
   autoplay: {
     delay: 3000,
-    // disableOnInteraction: false,
   },
 });
 
@@ -62,18 +33,15 @@ const swiper = new Swiper(".mv__swiper", {
 const aboutSwiper = new Swiper(".about-swiper", {
   loop: true, // ループ有効
   loopedSlides : 6,
-  slidesPerView: 2, // 一度に表示する枚数
+  slidesPerView: 'auto',
   speed: 4000, // ループの時間
   allowTouchMove: false, // スワイプ無効
-  breakpoints:{
-    376:{
-      slidesPerView: 3,
-    },
-  },
   autoplay: {
     delay: 0, // 途切れなくループ
     disableOnInteraction: false,
   },
+    observer: true,
+    observeParents: true,
 });
 
 // 要素までスクロールしたらふわっと出てくるアニメーション
