@@ -146,6 +146,10 @@
 }
 
 // ドロワーメニュー
+.no-scroll {
+    overflow: hidden;
+}
+
 .drawer-menu{
     position: absolute;
     z-index: 5000;
@@ -737,7 +741,7 @@
     padding-left: 17px;
 }
 
-.category__item.current::before{
+.category__link.current::before{
     position: absolute;
     top: 6px;
     left: 3px;
@@ -751,7 +755,7 @@
     }
 }
 
-.top-news__categories .category__item.current::before{
+.top-news__categories .category__link.current::before{
     @include mq("md"){
         left: 3px;
     }
@@ -856,14 +860,14 @@
 }
 
 .news-list__tags{
-   display: flex;
-   align-items: center;
-   column-gap: 20px;
-   row-gap: 10px;
-   @include mq("md"){
-    column-gap: 6px;
-    flex-wrap: wrap;
-   }
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    row-gap: 10px;
+    @include mq("md"){
+        column-gap: 6px;
+        flex-wrap: wrap;
+    }
 }
 
 .news-list__tag.tag{
@@ -1045,10 +1049,12 @@
 }
 
 
-.bottom-contact__button:hover,
-.bottom-contact__tel:hover{
-    opacity: 1;
-    color: $navy;
+@media (hover:hover){
+    .bottom-contact__button:hover,
+    .bottom-contact__tel:hover{
+        opacity: 1;
+        color: $navy;
+    }
 }
 
 .bottom-contact__button:hover::before,
@@ -1066,9 +1072,6 @@
 
 .bottom-contact__tel{
     margin-top: 20px;
-    @include mq("md"){
-
-    }
 }
 
 .bottom-contact__note{
@@ -1170,7 +1173,6 @@
 
 .footer__link-item{
     line-height: 0;
-
 }
 
 .footer__link{
@@ -1398,6 +1400,7 @@
         line-height: calc(17/14);
     }
 }
+
 .philosophy__wrap picture{
     width: 360px;
     aspect-ratio: 360 / 535;
@@ -1483,8 +1486,11 @@
 .address__map{
     margin-top: 64px;
     object-fit: cover;
+    aspect-ratio: 1100/400;
+    line-height: 0;
     @include mq("md"){
         margin-top: 20px;
+        aspect-ratio: 335/400;
     }
 }
 
@@ -1498,7 +1504,6 @@
 }
 
 // アバウトページCompany
-
 .company{
     margin-top: 120px;
     padding: 70px 0 120px;
@@ -1595,7 +1600,7 @@
 }
 
 .about-swiper .swiper-slide{
-    width: clamp(180px, 33vw, 480px);
+    width: clamp(180px, 34vw, 480px);
     aspect-ratio: 480/400;
     margin-left: 10px;
     display: flex;
@@ -1621,7 +1626,6 @@
 
 // サービスページ
 // Service
-
 .service{
     margin-top: 120px;
     margin-bottom: 120px;
@@ -1639,8 +1643,8 @@
     margin-left: auto;
     margin-right: auto;
     @include mq("lg"){
-       padding-left: 20px;
-       padding-right: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
     @include mq("md"){
         padding: 0;
@@ -1765,7 +1769,6 @@
     text-transform: uppercase;
     @include mq("md"){
         font-size: 18px;
-
     }
 }
 
@@ -1871,7 +1874,6 @@
     }
 }
 
-
 // ニュース記事ページ
 .news-view{
     padding-bottom: 119px;
@@ -1914,7 +1916,6 @@
     @include mq("md"){
         padding: 0 15px;
     }
-
 }
 
 // ニュース記事左側
@@ -1975,7 +1976,7 @@
     aspect-ratio: 718/380;
     object-fit: cover;
     @include mq("md"){
-       aspect-ratio: 315/176;
+        aspect-ratio: 315/176;
     }
 }
 
@@ -2154,9 +2155,9 @@
     width: 300px;
     @include mq("lg"){
         width: 250px;
-        @include mq("md"){
+    }
+    @include mq("md"){
             width: 100%;
-        }
     }
 }
 
@@ -2395,7 +2396,6 @@
     }
 }
 
-
 .works__title{
     width: fit-content;
     font-size: 18px;
@@ -2600,7 +2600,7 @@
 }
 
 .form__select{
- padding-right: 35px;
+    padding-right: 35px;
 }
 
 .form__data-select{
@@ -2628,12 +2628,12 @@
 .form__data-radio,
 .form__data-select,
 .form__data-check {
-  margin-top: 10px;
+    margin-top: 10px;
 }
 
 .wpcf7-list-item {
     margin: 0;
-  }
+}
 
 .wpcf7-form-control-wrap[data-name="radio-category"]
 .wpcf7-list-item+ .wpcf7-list-item {
@@ -2711,7 +2711,7 @@
 
 .form__checkbox:checked+ .wpcf7-list-item-label::after {
     opacity: 1;
-  }
+}
 
 .form__submit-button {
     margin-top: 40px;
@@ -2728,8 +2728,8 @@
     border-radius: 4px;
     background-color: $navy;
     &:hover {
-      transition: opacity 0.3s;
-      opacity: 0.7;
+        transition: opacity 0.3s;
+        opacity: 0.7;
     }
     @include mq("md"){
         width: 260px;
@@ -3061,12 +3061,12 @@
 
 @keyframes fadeRightAnime {
     0% {
-      opacity: 0;
-      transform: translateX(100px);
+        opacity: 0;
+        transform: translateX(100px);
     }
     100% {
-      opacity: 1;
-      transform: translateX(0);
+        opacity: 1;
+        transform: translateX(0);
     }
 }
 
@@ -3084,12 +3084,12 @@
 
 @keyframes fadeLeftAnime {
     0% {
-      opacity: 0;
-      transform: translateX(-100px);
+        opacity: 0;
+        transform: translateX(-100px);
     }
     100% {
-      opacity: 1;
-      transform: translateX(0);
+        opacity: 1;
+        transform: translateX(0);
     }
 }
 
@@ -3195,7 +3195,7 @@ span[property=name].current-item{
 .nav-links {
     display: flex;
     gap: 10px;
-  }
+}
 
   // 前へ、次へリンクのスタイル
 .page-prev::before,
@@ -3294,9 +3294,9 @@ span[property=name].current-item{
 
 // READ MORE 矢印
 .arrow-after{
-   display: inline-block;
-   transition: margin 0.5s;
-   font-weight: $medium;
+    display: inline-block;
+    transition: margin 0.5s;
+    font-weight: $medium;
 }
 
 .hover-line .arrow-after{
@@ -3342,7 +3342,7 @@ span[property=name].current-item{
 .hover-wide:hover .arrow-after {
     margin-right: -5px;
     margin-left: 5px;
-  }
+}
 
 .hover-wide:hover .arrow-before{
     margin-right: 5px;
