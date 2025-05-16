@@ -20,10 +20,10 @@ $(function(){
           history.replaceState(null, null, tempHash);
         } else if (retryCount < 3){
           retryCount++;
-          setTimeout(tryScroll, 300);
+          setTimeout(tryScroll, 200);
         }
       };
-      setTimeout(tryScroll, 600);
+      setTimeout(tryScroll, 300);
     }
   });
   // ページ内リンクのクリック
@@ -72,8 +72,7 @@ const aboutSwiper = new Swiper(".about-swiper", {
     observeParents: true,
 });
 
-// 要素までスクロールしたらふわっと出てくるアニメーション
-
+// スクロールしたらふわっと出てくるアニメーション
 var pos = 0,
 winScrollTop = 0;
 
@@ -124,4 +123,50 @@ $(window).on("load", function () {
   fadeAnime();
 });
 
+// 文字数制限
+$(document).ready(function() {
+  function getLimit(selector) {
+    const width = $(window).width();
+
+    // 各セレクタごとのレスポンシブ制限
+    switch (selector) {
+      case '.js-limit':
+        return width <= 768 ? 24 : 24; //スマホ：PC
+      case '.js-limit-work':
+        return width <= 768 ? 24 : 46;
+      case '.js-article':
+        return width <= 768 ? 36 : 36;
+      case '.js-limit-news':
+        return width <= 768 ? 40 : 46;
+      default:
+        return 20;
+    }
+  }
+
+  function applyTextLimit() {
+    ['.js-limit', '.js-limit-work', '.js-article','.js-limit-news'].forEach(function(selector) {
+      $(selector).each(function() {
+        const $this = $(this);
+        const originalText = $this.data('original-text') || $this.text(); // 元のテキストを保存
+        $this.data('original-text', originalText);
+
+        const limit = getLimit(selector);
+        if (originalText.length > limit) {
+          $this.text(originalText.substring(0, limit) + "...");
+        } else {
+          $this.text(originalText);
+        }
+      });
+    });
+  }
+
+  // 初期実行
+  applyTextLimit();
+
+  // ウィンドウリサイズ時にも再実行（レスポンシブ対応）
+  $(window).on('resize', function() {
+    applyTextLimit();
+  });
 });
+
+})
