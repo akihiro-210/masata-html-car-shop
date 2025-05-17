@@ -664,6 +664,7 @@
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     @include mq("md"){
         font-size: 14px;
         margin-top: 12px;
@@ -682,6 +683,7 @@
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
 }
 
 .top-article__date{
