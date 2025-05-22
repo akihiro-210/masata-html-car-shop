@@ -1,16 +1,16 @@
-$(function(){
-
 // ヘッダー高さを考慮したページスクロール
+document.addEventListener("DOMContentLoaded", () => {
   const tempHash = window.location.hash;
   if (tempHash) {
     // ブラウザによる自動スクロールを阻止
     history.replaceState(null, null, window.location.pathname + window.location.search);
     window.scrollTo(0, 0); // Safari用に強制スクロールトップ
   }
+
   $(window).on("load", function () {
     if (tempHash) {
       const $target = $(tempHash);
-      let retryCount = 0;
+      // DOMが完全に反映されていないケースへの対処
       const tryScroll = () => {
         const headerHeight = $(".js-header").height();
         if ($target.length && $target.offset()) {
@@ -18,14 +18,14 @@ $(function(){
           $("html, body").animate({ scrollTop: position }, 500, "swing");
           // hashを戻す（必要であれば）
           history.replaceState(null, null, tempHash);
-        } else if (retryCount < 3){
-          retryCount++;
+        } else {
           setTimeout(tryScroll, 200);
         }
       };
-      setTimeout(tryScroll, 300);
+      setTimeout(tryScroll, 400);
     }
   });
+
   // ページ内リンクのクリック
   $('a[href^="#"]').on("click", function (e) {
     e.preventDefault();
@@ -35,6 +35,9 @@ $(function(){
     const position = target.offset().top - headerHeight;
     $("html, body").animate({ scrollTop: position }, 500, "swing");
   });
+});
+
+$(function(){
 
 // ハンバーガーメニュー
 $(".js-hamburger,.js-drawer,.js-circle-bg").click(function () {
