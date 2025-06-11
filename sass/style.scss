@@ -15,7 +15,6 @@
     pointer-events: none;
     @include mq("md"){
         background-color: transparent;
-        pointer-events: auto;
     }
 }
 
@@ -26,9 +25,6 @@
     height: inherit;
     align-items: center;
     pointer-events: none;
-    @include mq("md"){
-        pointer-events: auto;
-    }
 }
 
 .header__name{
@@ -201,6 +197,7 @@
     height: 14px;
     cursor: pointer;
     transition: 1s transform;
+    pointer-events: auto;
 }
 
 .hamburger span{
@@ -305,6 +302,7 @@
     text-transform: uppercase;
     color: $white;
     font-family: $second-font;
+    pointer-events: auto;
 }
 
 .drawer-menu__icons{
