@@ -151,7 +151,6 @@ select::-ms-expand {
 @media screen and (max-width: 768px) {
   .header {
     background-color: transparent;
-    pointer-events: auto;
   }
 }
 
@@ -166,11 +165,6 @@ select::-ms-expand {
       -ms-flex-align: center;
           align-items: center;
   pointer-events: none;
-}
-@media screen and (max-width: 768px) {
-  .header__inner {
-    pointer-events: auto;
-  }
 }
 
 .header__name {
@@ -385,6 +379,7 @@ select::-ms-expand {
   transition: 1s -webkit-transform;
   transition: 1s transform;
   transition: 1s transform, 1s -webkit-transform;
+  pointer-events: auto;
 }
 
 .hamburger span {
@@ -509,6 +504,7 @@ select::-ms-expand {
   text-transform: uppercase;
   color: #fff;
   font-family: "Roboto", sans-serif;
+  pointer-events: auto;
 }
 
 .drawer-menu__icons {
