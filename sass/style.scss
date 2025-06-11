@@ -2,6 +2,9 @@
 @use "./base/reset";
 @use "./global" as *;
 
+// * {
+//   outline: 1px solid red; /* 開発時のデバッグ用 */
+// }
 // ヘッダー
 .header{
     width: 100%;
@@ -9,8 +12,10 @@
     position: fixed;
     top: 0;
     left: 0;
+    pointer-events: none;
     @include mq("md"){
         background-color: transparent;
+        pointer-events: auto;
     }
 }
 
@@ -20,18 +25,43 @@
     display: flex;
     height: inherit;
     align-items: center;
+    pointer-events: none;
+    @include mq("md"){
+        pointer-events: auto;
+    }
 }
 
 .header__name{
     z-index: 20;
-}
-
-.header__logo{
+    pointer-events: auto;
+    position: relative;
     width: 258px;
     height: 180px;
     @include mq("lg"){
         width: 114px;
         height: 80px;
+    }
+}
+
+.header__name a{
+    position: absolute;
+    top: 45px;
+    left: 17px;
+    width: 240px;
+    height: 88px;
+    transition: background-color 0.5s;
+    @include mq("lg"){
+        top: 20px;
+        left: 7px;
+        width: 107px;
+        height: 39px;
+    }
+}
+
+@media (hover:hover){
+    .header__name a:hover{
+        opacity: 1;
+        background-color: rgba($color: $navy, $alpha: 0.2);
     }
 }
 
@@ -46,12 +76,13 @@
     justify-content: end;
     z-index: 10;
     background-color: $white;
+    pointer-events: auto;
 }
 
 .header__items{
     height: inherit;
     display: flex;
-    column-gap: 50px;
+    column-gap: 51px;
     align-items: center;
     @include mq("lg"){
         column-gap: 30px;
@@ -103,12 +134,12 @@
 .header__link-contact{
     color: $white;
     margin-left: 50px;
-    padding: 27px 0 34px;
-    display: inline-block;
+    display: flex;
     width: 187px;
-    text-align: center;
+    height: inherit;
+    align-items: center;
+    justify-content: center;
     background-color: $navy;
-    line-height: calc(19/16);
     transition: all 0.5s;
     position: relative;
     border: 1px solid $navy;
@@ -116,15 +147,22 @@
 }
 
 .header__link-contact .fa-envelope{
-    margin-right: 10px;
     font-size: 22px;
     color: $white;
+    z-index: 2;
+}
+
+.header__link-contact .fa-envelope::before{
+    position: absolute;
+    top: 28px;
+    left: 40px;
     transition: all 0.5s;
 }
 
 .header__link-contact span{
     z-index: 2;
     position: relative;
+    margin-left: 15px;
 }
 
 .header__link-contact::before{
@@ -137,16 +175,14 @@
     content: "";
     transform: scale(0 , 1);
     transform-origin: right top;
-    transition: transform 0.6s;
+    transition: transform 0.5s;
     z-index: 1;
 }
 
 @media (hover:hover){
-    .header__link-contact:hover{
+    .header__link-contact:hover,
+    .header__link-contact:hover .fa-envelope::before{
         opacity: 1;
-        color: $navy;
-    }
-    .header__link-contact:hover .fa-envelope{
         color: $navy;
     }
     .header__link-contact:hover::before{
@@ -244,9 +280,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     row-gap: 50px;
-    padding: 0 50px;
+    padding: 180px 50px 20px;
+    overflow: auto;
 }
 
 .drawer-menu__items{
@@ -292,13 +328,14 @@
     height: 100px;
     border-radius: 50%;
     background: $navy03;
-    transition: all 0.8s;
-    opacity: 0;
+    transition: transform 0.5s;
+    opacity: 1;
 }
 
 .circle-bg.is-active{
     transform: scale(50);
     opacity: 1;
+    transition: transform 0.5s;
 }
 
 .drawer-menu.is-active .drawer-menu__wrap{
@@ -417,6 +454,7 @@
 }
 
 .slogan__text{
+    color: $navy;
     margin-right: 100px;
     display: inline-block;
     font-size: 150px;
@@ -501,7 +539,7 @@
 
 .top-about__link-wrap{
     text-align: right;
-    margin-top: 32px;
+    margin-top: 34px;
     padding: 0;
 }
 
@@ -511,12 +549,13 @@
     width: 100%;
     padding: 120px 0;
     @include mq("md"){
-        padding: 80px 0;
+        padding: 78px 0 82px;
     }
 }
 
 .top-service__inner.inner{
     padding-inline: 20px 19px;
+    overflow-x: hidden;
     @include mq("md"){
         padding-inline: 20px;
     }
@@ -641,10 +680,10 @@
 
 .top-works{
     width: 100%;
-    padding: 120px 0;
+    padding: 120px 0 122px;
     background-color: $bg;
     @include mq("md"){
-        padding: 60px 0 77px;
+        padding: 58px 0 79px;
     }
 }
 
@@ -715,6 +754,7 @@
 
 .top-article__title-box{
     margin-top: 30px;
+    line-height: 1;
     @include mq("md"){
         margin-top: 12px;
     }
@@ -753,15 +793,22 @@
     }
 }
 
+.top-works__articles li:last-child .top-article__date{
+    margin-top: 19px;
+    @include mq("md"){
+        margin-top: 12px;
+    }
+}
+
 .top-works__link-wrap{
-    margin-top: 36px;
+    margin-top: 34px;
     text-align: right;
 }
 
 // News
 
 .top-news{
-    padding-bottom: 119px;
+    padding-bottom: 118px;
     background-color: $bg;
     @include mq("md"){
         padding-bottom: 69px;
@@ -773,6 +820,13 @@
     align-items: flex-start;
     @include mq("md"){
         display: block;
+    }
+}
+
+.top-news__left{
+    max-width: 264px;
+    @include mq("md"){
+        max-width: 100%;
     }
 }
 
@@ -803,6 +857,7 @@
     font-weight: $medium;
     color: $gray02;
     line-height: calc(17/14);
+    transition: color 0.5s;
     @include mq("md"){
         font-size: 12px;
         line-height: calc(17/12);
@@ -837,6 +892,7 @@
 @media (hover:hover){
     .category__link:not(:has(.current)):hover{
         color: $black;
+        opacity: 1;
     }
 }
 
@@ -919,44 +975,33 @@
 }
 
 .news-list__item{
-    padding-bottom: 26px;
     border-bottom: 1px solid $gray-line;
-    @include mq("md"){
-        padding-bottom: 15px;
-    }
+    display: block;
 }
 
-.top-news__list .news-list__item:first-child{
-    padding-bottom: 32px;
+.top-news__list li:first-child .news-list__item{
+    padding-bottom: 33px;
     @include mq("md"){
         padding-bottom: 19px;
     }
 }
 
-.news-list__item:first-child{
+li:first-child .news-list__item{
     @include mq("md"){
         border-top: 1px solid $gray-line;
         padding-top: 19px;
     }
 }
 
-.top-news__list .news-list__item:not(:first-child){
-    padding-bottom: 28px;
+.top-news__list li:not(:first-child) .news-list__item{
+    padding-bottom: 32px;
     @include mq("md"){
         padding-bottom: 19px;
     }
 }
 
-.news-list__item:not(:first-child){
-    padding-bottom: 25px;
-    @include mq("md"){
-        padding-bottom: 15px;
-    }
-}
-
 .news-list__sub-content{
     display: flex;
-    align-items: center;
     column-gap: 29px;
     @include mq("md"){
         column-gap: 12px;
@@ -964,22 +1009,24 @@
 }
 
 .news-list__date.date-text{
+    padding-top: 3px;
     line-height: calc(17/12);
-    letter-spacing: 0.04em;
     font-weight: $bold;
     @include mq("md"){
+        padding-top: 5px;
         line-height: calc(14/10);
     }
 }
 
-.news-list__tags{
+.tags{
     display: flex;
     align-items: center;
     column-gap: 20px;
     row-gap: 10px;
-    @include mq("md"){
+    flex-wrap: wrap;
+    @include mq("lg"){
         column-gap: 6px;
-        flex-wrap: wrap;
+        row-gap: 5px;
     }
 }
 
@@ -991,45 +1038,14 @@
     line-height: calc(16/11);
 }
 
-.news-list__item:first-child .news-list__title-box{
+.news-list__title-box{
+    line-height: 1;
+}
+
+.top-news .news-list__title-box{
     margin-top: 26px;
     @include mq("md"){
         margin-top: 20px;
-    }
-}
-
-.top-news .news-list__item:first-child .news-list__title-box{
-    margin-top: 24px;
-    @include mq("md"){
-        margin-top: 20px;
-    }
-}
-
-.news-list__item:not(:first-child) .news-list__title-box{
-    margin-top: 26px;
-    @include mq("md"){
-        margin-top: 20px;
-    }
-}
-
-.news__right .news-list__title-box{
-    margin-top: 26px;
-    @include mq("md"){
-        margin-top: 25px;
-    }
-}
-
-.news__right .news-list__item:first-child{
-    padding-bottom: 29px;
-    @include mq("md"){
-        padding-bottom: 19px;
-    }
-}
-
-.news__right .news-list__item:not(:first-child){
-    padding-bottom: 28px;
-    @include mq("md"){
-        padding-bottom: 19px;
     }
 }
 
@@ -1044,7 +1060,6 @@
     @include mq("md"){
         font-size: 14px;
         line-height: 2;
-        margin-top: 20px;
     }
 }
 
@@ -1056,22 +1071,26 @@
 }
 
 .news-list__item:not(:first-child) .news-list__title{
-    // margin-top: 26px;
     line-height: calc(23/16);
     @include mq("md"){
-        // margin-top: 20px;
         line-height: calc(28/14);
     }
 }
 
-.top-news__list .news-list__item:nth-child(3) .news-list__title{
+.top-news__list li:nth-child(3) .news-list__title{
     @include mq("md"){
         line-height: calc(23/16);
     }
 }
 
+.top-news__list li:nth-child(3) .news-list__title-box{
+    @include mq("md"){
+        height: 24px;
+    }
+}
+
 .top-news__link-wrap{
-    margin-top: 32px;
+    margin-top: 34px;
     text-align: right;
     @include mq("md"){
         margin-top: 40px;
@@ -1112,20 +1131,17 @@
     background-color: $navy;
     display: flex;
     justify-content: center;
-    padding: 80px 25px;
+    align-items: center;
+    padding: 76px 25px 80px;
     @include mq("md"){
         width: 100%;
-        padding: 80px 25px 83px;
+        padding: 80px 25px 81px;
     }
 }
 
 .bottom-contact__body-inner{
     display: flex;
     flex-direction: column;
-    padding-left: 4px;
-    @include mq("md"){
-        padding-left: 0;
-    }
 }
 
 .bottom-contact__text,
@@ -1159,7 +1175,6 @@
     border-radius: 3px;
     transition: 0.5s;
     font-family: "Noto Sans JP",sans-serif;
-    font-weight: $regular;
     @include mq("md"){
         font-size: 16px;
         line-height: calc(23/16);
@@ -1168,17 +1183,21 @@
 }
 
 .bottom-contact__button{
+    margin-top: 25px;
+    padding: 16px 20px 20px 20px;
     @include mq("md"){
-        padding: 18px 20px 17px;
+        margin-top: 32px;
+        padding: 17px 20px 18px;
     }
 }
 
 .bottom-contact__tel{
+    margin-top: 20px;
     line-height: calc(26/22);
-    padding: 18px 20px 22px;
+    padding: 17px 20px 23px 20px;
     @include mq("md"){
         line-height: calc(19/16);
-        padding: 18px 20px 21px;
+        padding: 19px 20px 20px;
     }
 }
 
@@ -1225,26 +1244,16 @@
     transform-origin: left top;
 }
 
-.bottom-contact__button{
-    margin-top: 25px;
-    @include mq("md"){
-        margin-top: 32px;
-    }
-}
-
-.bottom-contact__tel{
-    margin-top: 20px;
-}
-
 .bottom-contact__note{
     margin-top: 22px;
     font-size: 14px;
     line-height: calc(17/14);
     font-family: "Noto Sans JP",sans-serif;
     @include mq("md"){
-        margin-top: 10px;
+        margin-top: 12px;
         font-size: 12px;
         line-height: calc(14/12);
+        padding-left: 3px;
     }
 }
 
@@ -1285,17 +1294,37 @@
     }
 }
 
-.footer__logo-link{
+.footer__logo{
+    object-fit: cover;
     width: 258px;
     height: 180px;
+    position: relative;
     @include mq("md"){
         width: 114px;
         height: 80px;
     }
 }
 
-.footer__logo{
-    object-fit: cover;
+.footer__logo-link{
+    position: absolute;
+    top: 45px;
+    left: 17px;
+    width: 240px;
+    height: 88px;
+    transition: background-color 0.5s;
+    @include mq("md"){
+        top: 20px;
+        left: 7px;
+        width: 107px;
+        height: 39px;
+    }
+}
+
+@media (hover:hover){
+    .footer__logo-link:hover{
+        opacity: 1;
+        background-color: rgba($color: $white, $alpha: 0.2);
+    }
 }
 
 .footer__icons{
@@ -1382,7 +1411,7 @@
     width: 500px;
     padding-top: 16px;
     padding-left: 50px;
-    padding-bottom: 47px;
+    padding-bottom: 52px;
     background-color: $white;
     z-index: 2;
     @include mq("lg"){
@@ -1395,10 +1424,9 @@
 
 .sub-mv__title{
     font-size: 100px;
-    font-weight: $medium;
+    font-weight: $bold;
     line-height: calc(148/100);
     text-transform: capitalize;
-    letter-spacing: 0.03em;
     @include mq("lg"){
         font-size: 44px;
         line-height: calc(65/44);
@@ -1407,8 +1435,8 @@
 
 .sub-mv__subtitle{
     font-size: 20px;
-    font-weight: $medium;
-    line-height: calc(29/20);
+    font-weight: $bold;
+    line-height: calc(24/20);
     margin-top: -16px;
     @include mq("lg"){
         font-size: 12px;
@@ -1428,7 +1456,7 @@
 // アバウトページコンセプト
 
 .concept{
-    margin-top: 60px;
+    margin-top: 59px;
     width: 100%;
     @include mq("md"){
         margin-top: 30px;
@@ -1518,7 +1546,7 @@
 // アバウトページPhilosophy
 
 .philosophy{
-    margin-top: 120px;
+    margin-top: 121px;
     @include mq("md"){
         margin-top: 80px;
     }
@@ -1543,6 +1571,7 @@
         row-gap: 33px;
         padding: 60px 20px 0;
         align-items: center;
+        background: linear-gradient(0deg,transparent calc(100% * 84/814),transparent 0%,$bg calc(100% * 84/814),$bg);
     }
 }
 
@@ -1593,8 +1622,9 @@
 // アバウトページセクションタイトル
 .about-subheading{
     font-size: 16px;
-    font-weight: $medium;
+    font-weight: $bold;
     line-height: calc(23/16);
+    color: $navy02;
     @include mq("md"){
         font-size: 12px;
         line-height: calc(17/12);
@@ -1605,10 +1635,9 @@
     display: flex;
     align-items: center;
     font-size: 40px;
-    font-weight: $medium;
+    font-weight: $bold;
     line-height: calc(59/40);
     text-transform: capitalize;
-    letter-spacing: 0.03em;
     @include mq("md"){
         font-size: 26px;
         line-height: calc(39/26);
@@ -1625,6 +1654,15 @@
     @include mq("md"){
         margin-left: 10px;
         margin-bottom: 1px;
+    }
+}
+
+.access .about-subheading{
+    line-height: calc(19/16);
+    padding-bottom: 4px;
+    @include mq("md"){
+        line-height: calc(17/12);
+        padding-bottom: 0;
     }
 }
 
@@ -1661,6 +1699,7 @@
 .access__address.text{
     font-family: "Noto Sans JP" ,sans-serif;
     line-height: calc(19/16);
+    font-weight: $normal;
     @include mq("md"){
         line-height: calc(20/14);
     }
@@ -1729,6 +1768,13 @@
     font-family: "Noto Sans JP", sans-serif;
     @include mq("md"){
         font-size: 14px;
+        line-height: calc(20/14);
+    }
+}
+
+.company__item:nth-child(4) .company__text{
+    line-height: calc(19/16);
+    @include mq("md"){
         line-height: calc(20/14);
     }
 }
@@ -1996,11 +2042,14 @@
 }
 
 .news__inner.inner{
-    display: flex;
+    display: grid;
     align-items: flex-start;
+    grid-template-columns: calc(100% * 262/1098) calc(100% * 836/1098);
+    padding-inline: 20px;
     @include mq("md"){
+        display: flex;
         flex-direction: column;
-        padding: 0 40px;
+        padding-inline: 40px;
     }
 }
 
@@ -2017,19 +2066,24 @@
 }
 
 .news__categories{
-    width: 264px;
+    max-width: 264px;
     display: flex;
     flex-direction: column;
     row-gap: 23px;
     margin-top: 1px;
     @include mq("md"){
         margin-top: 0;
-        padding-right: 35px;
-        width: 100%;
+        max-width: 100%;
         flex-direction: initial;
         flex-wrap: wrap;
+        width: 100%;
         row-gap: 15px;
-        justify-content: space-between;
+        column-gap: 25px;
+    }
+    @include mq("sp"){
+        display: grid;
+        grid-template-columns:  auto auto;
+        column-gap: 5px;
     }
 }
 
@@ -2054,6 +2108,34 @@
         row-gap: 20px;
     }
 }
+
+.news li .news-list__item{
+    padding-bottom: 31px;
+    @include mq("md"){
+        padding-bottom: 19px;
+    }
+}
+
+.news .news-list__title-box{
+    @include mq("md"){
+        font-size: 16px;
+    }
+}
+
+.news li:first-child .news-list__title-box{
+    margin-top: 23px;
+    @include mq("md"){
+        margin-top: 20px;
+    }
+}
+
+.news li:not(:first-child) .news-list__title-box{
+    margin-top: 22px;
+    @include mq("md"){
+        margin-top: 20px;
+    }
+}
+
 
 .pagination{
     margin-top: 56px;
@@ -2133,6 +2215,20 @@
         @include mq("md"){
             row-gap: 15px;
             column-gap: 6px;
+    }
+}
+
+.news-view__left .view-categories a:first-child .tag{
+    padding-inline: 18px 23px;
+    @include mq("md"){
+        padding-inline: 15px;
+    }
+}
+
+.news-view__left .view-categories a:nth-child(2) .tag{
+    padding-inline: 18px 27px;
+    @include mq("md"){
+        padding-inline: 15px;
     }
 }
 
@@ -2270,26 +2366,26 @@
     font-size: 16px;
     color: $black02;
     display: flex;
-    align-items: center;
-    height: 23px;
+    align-items: flex-start;
+    line-height: calc(23/16);
     @include mq("md"){
         font-size: 14px;
-        height: 20px;
+        line-height: calc(20/14);
     }
 }
 
 .news-view__body li::before{
     display: block;
     content: "";
-    width: 6px;
-    height: 6px;
+    min-width: 6px;
+    min-height: 6px;
     border-radius: 50%;
     background-color: $navy02;
     margin-right: 11px;
-    margin-bottom: 7px;
+    margin-top: 6px;
     @include mq("md"){
         margin-right: 10px;
-        margin-bottom: 0;
+        margin-top: 7px;
     }
 }
 
@@ -2304,9 +2400,8 @@
 .nav-links{
     margin-top: 40px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding-right: 11px;
+    padding-right: 10px;
     @include mq("md"){
         margin-top: 48px;
     }
@@ -2328,10 +2423,27 @@
     }
 }
 
+.news-view .nav-previous{
+    height: 41px;
+    @include mq("md"){
+        height: 44px;
+    }
+}
+
+.news-view .nav-next{
+    width: 129px;
+}
+
+.news-view .arrow-after::after{
+    margin-left: 3px;
+    transform: rotate(45deg) translateY(-2px) translateX(4px);
+}
+
 .nav-previous a,
 .nav-next a{
     color: $navy02;
     width: 100%;
+    padding-bottom: 2px;
     height: inherit;
     display: flex;
     align-items: center;
@@ -2359,6 +2471,7 @@
     display: flex;
     align-items: center;
     padding-inline: 18px;
+    padding-bottom: 3px;
     font-size: 14px;
     font-weight: $medium;
     color: $white;
@@ -2415,7 +2528,7 @@
 }
 
 .news-view__categories{
-    margin-top: 43px;
+    margin-top: 44px;
     @include mq("md"){
         margin-top: 41px;
     }
@@ -2423,13 +2536,9 @@
 
 .news-view__archives-list li,
 .news-view__categories-list li{
-    padding: 17px 0 17px;
     border-bottom: 1px solid $gray-line02;
     font-size: 14px;
     line-height: 1;
-    @include mq("md"){
-        padding: 18px 0 17px;
-    }
 }
 
 .news-view__archives-list li:last-child,
@@ -2443,6 +2552,19 @@
     color: $black;
     font-family: "Noto Sans JP" , sans-serif;
     line-height: calc(20/14);
+    display: block;
+    width: 100%;
+    padding: 17px 0 17px;
+    @include mq("md"){
+        padding: 18px 0 17px;
+    }
+}
+
+.news-view__categories-list li:first-child a{
+    line-height: calc(17/14);
+    @include mq("md"){
+        line-height: calc(20/14);
+    }
 }
 
 // ワークスページ
@@ -2480,12 +2602,12 @@
 }
 
 .works__categories{
-    width: 265px;
+    max-width: 265px;
     display: flex;
     flex-direction: column;
     row-gap: 20px;
     @include mq("md"){
-        width: 100%;
+        max-width: 100%;
         flex-direction: initial;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -2499,11 +2621,11 @@
 }
 
 .works__categories .category__item{
-    height: 20px;
+    min-height: 20px;
     line-height: 1.5;
     padding-left: 14px;
     @include mq("md"){
-        height: 17px;
+        min-height: 17px;
     }
 }
 
@@ -2526,11 +2648,14 @@
 }
 
 .works__item{
+    border-bottom: 1px solid $gray-line;
+}
+
+.works__item-link{
     display: grid;
     column-gap: 30px;
     grid-template-columns: calc(100% * 160/776) auto;
     padding-bottom: 29px;
-    border-bottom: 1px solid $gray-line;
     @include mq("md"){
         column-gap: 15px;
         grid-template-columns: calc(100% * 130/295) auto;
@@ -2567,6 +2692,7 @@
     display: flex;
     flex-wrap: wrap;
     column-gap: 5px;
+    row-gap: 5px;
 }
 
 .works-content__title{
@@ -2599,7 +2725,8 @@
     }
 }
 
-.works__date{
+.works__date.date-text{
+    font-size: 10px;
     margin-top: auto;
     @include mq("md"){
         margin-top: 10px;
@@ -2632,15 +2759,12 @@
     }
 }
 
-.works-view__heading .view-heading__main-title{
-    line-height: calc(31/26);
-    @include mq("md"){
-        line-height: calc(30/18);
-    }
+.works-view__heading{
+    margin-top: 10px;
 }
 
 .works-view__heading .view-heading__date{
-    margin-top: 27px;
+    margin-top: 18px;
     @include mq("md"){
         margin-top: 10px;
     }
@@ -2714,6 +2838,7 @@
     width: 285px;
     height: 44px;
     padding-inline: 12px;
+    padding-bottom: 2px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3245,12 +3370,29 @@
     animation-duration: 1s;
     animation-fill-mode: forwards;
     opacity: 0;
+    @include mq("md"){
+        animation: fadeRightAnimeSP;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        opacity: 0;
+    }
 }
 
 @keyframes fadeRightAnime {
     0% {
         opacity: 0;
         transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeRightAnimeSP{
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
     }
     100% {
         opacity: 1;
@@ -3465,6 +3607,7 @@ span[property=name].current-item{
     color: $navy02;
     font-family: $second-font;
     line-height: calc(16/14);
+    font-weight: $medium;
 }
 
 // ボタン
@@ -3494,12 +3637,16 @@ span[property=name].current-item{
 .arrow-after::after{
     display: block;
     content: "";
-    width: 5px;
-    height: 5px;
+    width: 7px;
+    height: 7px;
     margin-left: 10px;
     border-top: 1px solid $navy02;
     border-right: 1px solid $navy02;
-    transform: rotate(45deg);
+    transform: rotate(45deg) translateY(2px);
+}
+
+.top-service__link .arrow-after::after{
+    transform: rotate(45deg) translateY(0px);
 }
 
 // 前に戻る矢印
@@ -3512,12 +3659,12 @@ span[property=name].current-item{
 .arrow-before::before{
     display: block;
     content: "";
-    width: 5px;
-    height: 5px;
-    margin-right: 10px;
+    width: 7px;
+    height: 7px;
+    margin-right: 7px;
     border-top: 1px solid $navy02;
     border-left: 1px solid $navy02;
-    transform: rotate(-45deg);
+    transform: rotate(-45deg) translateY(2px);
 }
 
 @media (hover:hover){
@@ -3525,7 +3672,6 @@ span[property=name].current-item{
         opacity: 1;
     }
 }
-
 
 .hover-wide:hover .arrow-after {
     margin-right: -5px;
@@ -3546,7 +3692,10 @@ span[property=name].current-item{
 }
 
 @media (hover: hover) {
-    .hover-line:hover {
+    .hover-line:hover,
+    .top-works__article:hover .hover-line,
+    .news-list__item:hover .hover-line,
+    .works__item-link:hover .hover-line{
         background-size: 100% 1px;
         opacity: 1;
     }
