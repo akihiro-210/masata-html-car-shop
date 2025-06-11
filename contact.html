@@ -19,12 +19,12 @@
   <meta property="og:description" content="">
   <meta name="twitter:card" content="summary">
   <!-- ファビコン -->
-  <link rel="icon" href="./images/icon-car.ico">
-  <link rel="apple-touch-icon" href="./images/icon-car.png">
+  <link rel="icon" href="./images/favicon.ico">
+  <link rel="apple-touch-icon" href="./images/favicon.png">
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Oswald:wght@200..700&family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Oswald:wght@200..700&family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap" rel="stylesheet">
   <!-- css -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
   <link rel="stylesheet" href="./css/style.css">
@@ -39,7 +39,10 @@
 <body>
   <header class="header js-header">
     <div class="header__inner">
-      <h1 class="header__name"><a href="./index.html"><img src="./images/icon-logo-white.svg" alt="ExciteCodeWhite" class="header__logo" width="258" height="180"></a></h1>
+      <div class="header__name">
+        <img src="./images/icon-logo-white.svg" alt="ExciteCode" class="header__logo" width="258" height="180">
+        <a href="./index.html"></a>
+      </div>
       <nav class="nav header__nav md-none">
         <ul class="header__items">
           <li class="header__item"><a href="./index.html" class="nav__item header__link">top</a></li>
@@ -48,7 +51,7 @@
           <li class="header__item"><a href="./works.html" class="nav__item header__link">works</a></li>
           <li class="header__item"><a href="./news.html" class="nav__item header__link">news</a></li>
         </ul>
-        <a href="./contact.html" class="header__link header__link-contact md-none"><span><i class="fa-regular fa-envelope"></i>contact</span></a>
+        <a href="./contact.html" class="header__link header__link-contact md-none"><i class="fa-regular fa-envelope"></i><span>contact</span></a>
       </nav>
     </div>
 <!-- ハンバーガーメニュー -->
@@ -60,7 +63,7 @@
 <!-- ドロワーメニュー -->
     <div class="drawer-menu js-drawer">
       <div class="drawer-menu__wrap">
-        <img src="./images/icon-logo-navy.svg" class="drawer-menu__logo" alt="ExciteCodeNavy" width="114" height="80">
+        <img src="./images/icon-logo-navy.svg" class="drawer-menu__logo" alt="ExciteCode" width="114" height="80">
         <div class="drawer-menu__inner">
           <ul class="drawer-menu__items">
             <li class="drawer-menu__item"><a href="./index.html" class="drawer-menu__link">top</a></li>
@@ -86,13 +89,13 @@
 <!-- Contact メインビュー -->
     <div class="sub-mv sub-mv__about">
       <div class="sub-mv__inner">
-        <div class="sub-mv__title-wrap delay-no2 fade-left">
-          <h1 class="sub-mv__title">contact</h1>
+        <h1 class="sub-mv__title-wrap delay-no2 fade-left">
+          <p class="sub-mv__title">contact</p>
           <p class="sub-mv__subtitle">お問い合わせ</p>
-        </div>
+        </h1>
         <picture>
           <source srcset="./images/contact/mv-contact-img.jpg" media="(min-width: 1024px)" class="delay-no1 fade-up" width="1270" height="514">
-          <img src="./images/contact/mv-contact-sp-img.jpg" alt="contact-page-fv" class="sub-mv__img delay-no1 fade-up" width="365" height="280">
+          <img src="./images/contact/mv-contact-sp-img.jpg" alt="カーブを走行中の自動車" class="sub-mv__img delay-no1 fade-up" width="365" height="280">
         </picture>
       </div>
     </div>
@@ -115,9 +118,10 @@
     <div class="footer__inner">
       <div class="footer__wrap">
         <div class="footer__logos">
-          <a href="./index.html" class="footer__logo-link">
-            <img src="./images/icon-logo-navy.svg" alt="ExciteCodeNavy" class="footer__logo" width="258" height="180">
-          </a>
+          <div class="footer__logo">
+            <img src="./images/icon-logo-navy.svg" alt="ExciteCode" class="footer__logo" width="258" height="180">
+            <a href="./index.html" class="footer__logo-link"></a>
+          </div>
           <ul class="footer__icons">
             <li class="footer__icon"><a href="./404.html" class="footer__icon-link"><i class="fa-brands fa-facebook"></i></a></li>
             <li class="footer__icon"><a href="./404.html" class="footer__icon-link"><i class="fa-brands fa-twitter"></i></a></li>
