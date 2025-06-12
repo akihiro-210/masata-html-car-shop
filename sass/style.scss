@@ -1855,7 +1855,7 @@ li:first-child .news-list__item{
 // Service
 .service{
     margin-top: 120px;
-    margin-bottom: 120px;
+    margin-bottom: 121px;
     @include mq("md"){
         margin-top: 50px;
         margin-bottom: 80px;
@@ -1901,18 +1901,18 @@ li:first-child .news-list__item{
 }
 
 .service__titles{
-    position: absolute;
-    padding-right: 19.82%;
-    top: 50%;
-    left: calc(100% * 50/560);
-    transform: translateY(-50%);
+    padding-right: calc(100% * 110/560);
+    margin-top: calc(100% * 111/560);
+    padding-left: calc(100% * 50/560);
+    padding-bottom: calc(100% * 50/560);
     @include mq("md"){
         margin-top: 60px;
         position: initial;
         margin-left: auto;
         margin-right: auto;
         padding-right: 0;
-        transform: translateY(0);
+        padding-left: 0;
+        padding-bottom: 0;
     }
 }
 
@@ -1923,7 +1923,7 @@ li:first-child .news-list__item{
     color: $navy02;
     display: flex;
     align-items: center;
-    @include mq("lg"){
+    @include mq("md"){
         font-size: 32px;
         line-height: calc(47/32);
     }
@@ -1936,7 +1936,7 @@ li:first-child .news-list__item{
     height: 34px;
     width: 1px;
     background-color: $black;
-    @include mq("lg"){
+    @include mq("md"){
         margin-left: 11px;
         height: 30px;
     }
@@ -1947,9 +1947,17 @@ li:first-child .news-list__item{
     font-size: 28px;
     font-weight: $bold;
     line-height: calc(34/28);
-    @include mq("lg"){
+    @include mq("md"){
         font-size: 20px;
         line-height: calc(29/20);
+    }
+}
+
+.service02 .service__title,
+.service03 .service__title{
+    margin-top: 25px;
+    @include mq("md"){
+        margin-top: 20px;
     }
 }
 
@@ -1965,8 +1973,18 @@ li:first-child .news-list__item{
     }
 }
 
+.service02 .service__content,
+.service03 .service__content{
+    margin-top: 24px;
+    @include mq("md"){
+        margin-top: 20px;
+    }
+}
+
 .service__wrap picture{
     aspect-ratio: 640/500;
+    display: flex;
+    align-items: center;
     @include mq("md"){
         aspect-ratio: 335/220;
         width: 100%;
@@ -2634,7 +2652,7 @@ li:first-child .news-list__item{
     border-left: 1px solid $gray02;
     @include mq("md"){
         width: 100%;
-        margin-top: 38px;
+        margin-top: 36px;
         padding-top: 0;
         padding-left: 0;
         border-left: none;
@@ -2699,6 +2717,7 @@ li:first-child .news-list__item{
     max-width: 527px;
     @include mq("md"){
         margin-top: 10px;
+        font-size: 14px;
     }
 }
 
