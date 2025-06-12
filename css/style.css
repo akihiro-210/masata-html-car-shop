@@ -2501,7 +2501,7 @@ select::-ms-expand {
 
 .service {
   margin-top: 120px;
-  margin-bottom: 120px;
+  margin-bottom: 121px;
 }
 @media screen and (max-width: 768px) {
   .service {
@@ -2566,12 +2566,10 @@ select::-ms-expand {
 }
 
 .service__titles {
-  position: absolute;
-  padding-right: 19.82%;
-  top: 50%;
-  left: 8.9285714286%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  padding-right: 19.6428571429%;
+  margin-top: 19.8214285714%;
+  padding-left: 8.9285714286%;
+  padding-bottom: 8.9285714286%;
 }
 @media screen and (max-width: 768px) {
   .service__titles {
@@ -2580,8 +2578,8 @@ select::-ms-expand {
     margin-left: auto;
     margin-right: auto;
     padding-right: 0;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    padding-left: 0;
+    padding-bottom: 0;
   }
 }
 
@@ -2597,7 +2595,7 @@ select::-ms-expand {
       -ms-flex-align: center;
           align-items: center;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   .service__number {
     font-size: 32px;
     line-height: 1.46875;
@@ -2612,7 +2610,7 @@ select::-ms-expand {
   width: 1px;
   background-color: #000;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   .service__number::after {
     margin-left: 11px;
     height: 30px;
@@ -2625,10 +2623,21 @@ select::-ms-expand {
   font-weight: 700;
   line-height: 1.2142857143;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   .service__title {
     font-size: 20px;
     line-height: 1.45;
+  }
+}
+
+.service02 .service__title,
+.service03 .service__title {
+  margin-top: 25px;
+}
+@media screen and (max-width: 768px) {
+  .service02 .service__title,
+  .service03 .service__title {
+    margin-top: 20px;
   }
 }
 
@@ -2646,8 +2655,25 @@ select::-ms-expand {
   }
 }
 
+.service02 .service__content,
+.service03 .service__content {
+  margin-top: 24px;
+}
+@media screen and (max-width: 768px) {
+  .service02 .service__content,
+  .service03 .service__content {
+    margin-top: 20px;
+  }
+}
+
 .service__wrap picture {
   aspect-ratio: 640/500;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 @media screen and (max-width: 768px) {
   .service__wrap picture {
@@ -3533,7 +3559,7 @@ select::-ms-expand {
 @media screen and (max-width: 768px) {
   .works__right {
     width: 100%;
-    margin-top: 38px;
+    margin-top: 36px;
     padding-top: 0;
     padding-left: 0;
     border-left: none;
@@ -3627,6 +3653,7 @@ select::-ms-expand {
 @media screen and (max-width: 768px) {
   .works-content__title {
     margin-top: 10px;
+    font-size: 14px;
   }
 }
 
