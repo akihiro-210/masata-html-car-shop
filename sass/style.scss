@@ -715,12 +715,15 @@
     }
 }
 
+.top-works__article-box{
+    border-bottom: 1px solid $gray-line;
+}
+
 .top-works__article{
     display: flex;
     align-items: flex-start;
     column-gap: 50px;
     padding: 50px 0 49px;
-    border-bottom: 1px solid $gray-line;
     @include mq("md"){
         column-gap: 18px;
         padding: 30px 0 29px;
@@ -751,7 +754,7 @@
 }
 
 .top-article__title-box{
-    margin-top: 30px;
+    margin-top: 28px;
     line-height: 1;
     @include mq("md"){
         margin-top: 12px;
@@ -761,7 +764,8 @@
 .top-article__title{
     padding-bottom: 3px;
     font-size: 24px;
-    line-height: calc(29/24);
+    // line-height: calc(29/24);
+    line-height: calc(32/24);
     font-weight: $medium;
     font-family: "Noto Sans JP",sans-serif;
     color: $black;
@@ -965,15 +969,23 @@
 .top-news__list{
     display: flex;
     flex-direction: column;
-    row-gap: 30px;
     @include mq("md"){
         margin-top: 40px;
-        row-gap: 20px;
+    }
+}
+
+.top-news__item-box{
+    border-bottom: 1px solid $gray-line;
+}
+
+.top-news__item-box:first-child,
+.news__item-box:first-child{
+    @include mq("md"){
+        border-top: 1px solid $gray-line;
     }
 }
 
 .news-list__item{
-    border-bottom: 1px solid $gray-line;
     display: block;
 }
 
@@ -986,15 +998,16 @@
 
 li:first-child .news-list__item{
     @include mq("md"){
-        border-top: 1px solid $gray-line;
         padding-top: 19px;
     }
 }
 
 .top-news__list li:not(:first-child) .news-list__item{
     padding-bottom: 32px;
+    padding-top: 28px;
     @include mq("md"){
         padding-bottom: 19px;
+        padding-top: 20px;
     }
 }
 
@@ -1041,7 +1054,7 @@ li:first-child .news-list__item{
 }
 
 .top-news .news-list__title-box{
-    margin-top: 26px;
+    margin-top: 25px;
     @include mq("md"){
         margin-top: 20px;
     }
@@ -1062,7 +1075,6 @@ li:first-child .news-list__item{
 }
 
 .news-list__item:first-child .news-list__title{
-    line-height: calc(19/16);
     @include mq("md"){
         line-height: calc(28/14);
     }
@@ -1088,7 +1100,7 @@ li:first-child .news-list__item{
 }
 
 .top-news__link-wrap{
-    margin-top: 34px;
+    margin-top: 32px;
     text-align: right;
     @include mq("md"){
         margin-top: 40px;
@@ -2119,39 +2131,45 @@ li:first-child .news-list__item{
 .news__items{
     display: flex;
     flex-direction: column;
-    row-gap: 30px;
-    @include mq("md"){
-        row-gap: 20px;
-    }
 }
 
-.news li .news-list__item{
+.news__item-box{
+    border-bottom: 1px solid $gray-line;
+}
+
+.news__item-box .news-list__item{
     padding-bottom: 31px;
     @include mq("md"){
         padding-bottom: 19px;
     }
 }
 
-.news .news-list__title-box{
+.news__item-box:not(:first-child) .news-list__item{
+    padding-top: 30px;
+    @include mq("md"){
+        padding-top: 20px;
+    }
+}
+
+.news__item-box .news-list__title-box{
     @include mq("md"){
         font-size: 16px;
     }
 }
 
-.news li:first-child .news-list__title-box{
+.news__item-box:first-child .news-list__title-box{
     margin-top: 23px;
     @include mq("md"){
         margin-top: 20px;
     }
 }
 
-.news li:not(:first-child) .news-list__title-box{
+.news__item-box:not(:first-child) .news-list__title-box{
     margin-top: 22px;
     @include mq("md"){
         margin-top: 20px;
     }
 }
-
 
 .pagination{
     margin-top: 56px;
@@ -2398,7 +2416,7 @@ li:first-child .news-list__item{
     border-radius: 50%;
     background-color: $navy02;
     margin-right: 11px;
-    margin-top: 6px;
+    margin-top: 9px;
     @include mq("md"){
         margin-right: 10px;
         margin-top: 7px;
@@ -2499,10 +2517,13 @@ li:first-child .news-list__item{
 }
 
 // サイドバー最新記事
+.news-view__article-list li{
+    border-bottom: 1px solid $gray-line02;
+}
+
 .new-article{
     display: flex;
     padding: 18px 0 17px;
-    border-bottom: 1px solid $gray-line02;
 }
 
 .new-article__thumbnail{
@@ -2679,10 +2700,10 @@ li:first-child .news-list__item{
     }
 }
 
-.works__item:not(:first-child){
-    margin-top: 30px;
+.works__item:not(:first-child) .works__item-link{
+    padding-top: 30px;
     @include mq("md"){
-        margin-top: 20px;
+        padding-top: 20px;
     }
 }
 
