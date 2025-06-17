@@ -2670,7 +2670,7 @@ li:first-child .news-list__item{
     flex: 1;
     padding-left: 59px;
     padding-top: 1px;
-    border-left: 1px solid $gray02;
+    border-left: 1px solid $gray-line;
     @include mq("md"){
         width: 100%;
         margin-top: 36px;
