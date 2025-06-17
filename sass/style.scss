@@ -378,7 +378,7 @@
 .mv__wrap{
     height: inherit;
     display: grid;
-    grid-template-columns:80.78125%  auto;
+    grid-template-columns:80.78125%  19.21875%;
     align-items: center;
     @include mq("md"){
         grid-template-columns: 1fr;
@@ -417,7 +417,7 @@
 }
 
 .mv__title{
-    font-size: 60px;
+    font-size: min(60px, 6vw);
     font-weight: $bold;
     letter-spacing: 0.067em;
     line-height: 1;
