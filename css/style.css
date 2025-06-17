@@ -607,7 +607,7 @@ select::-ms-expand {
 .mv__wrap {
   height: inherit;
   display: grid;
-  grid-template-columns: 80.78125% auto;
+  grid-template-columns: 80.78125% 19.21875%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -664,7 +664,7 @@ select::-ms-expand {
 }
 
 .mv__title {
-  font-size: 60px;
+  font-size: min(60px, 6vw);
   font-weight: 700;
   letter-spacing: 0.067em;
   line-height: 1;
