@@ -1475,7 +1475,7 @@ select::-ms-expand {
   font-weight: 500;
   color: #000;
   line-height: 1.4375;
-  padding-bottom: 4px;
+  padding-bottom: 3px;
   font-family: "Noto Sans JP", sans-serif;
 }
 @media screen and (max-width: 768px) {
@@ -2764,7 +2764,7 @@ select::-ms-expand {
 
 .news {
   margin-top: 60px;
-  margin-bottom: 119px;
+  margin-bottom: 120px;
 }
 @media screen and (max-width: 768px) {
   .news {
@@ -2879,7 +2879,7 @@ select::-ms-expand {
 }
 
 .news__item-box .news-list__item {
-  padding-bottom: 30px;
+  padding-bottom: 31px;
 }
 @media screen and (max-width: 768px) {
   .news__item-box .news-list__item {
@@ -2888,7 +2888,7 @@ select::-ms-expand {
 }
 
 .news__item-box:not(:first-child) .news-list__item {
-  padding-top: 29px;
+  padding-top: 30px;
 }
 @media screen and (max-width: 768px) {
   .news__item-box:not(:first-child) .news-list__item {
