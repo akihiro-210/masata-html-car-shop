@@ -430,10 +430,11 @@ select::-ms-expand {
 
 .no-scroll {
   overflow: hidden;
+  pointer-events: none;
 }
 
 .drawer-menu {
-  position: absolute;
+  position: fixed;
   z-index: 5000;
   display: none;
   top: 0;
@@ -520,6 +521,7 @@ select::-ms-expand {
 .drawer-menu__icon-link {
   color: #fff;
   font-size: 22px;
+  pointer-events: auto;
 }
 
 .circle-bg {
@@ -538,6 +540,7 @@ select::-ms-expand {
   transition: transform 0.5s;
   transition: transform 0.5s, -webkit-transform 0.5s;
   opacity: 1;
+  pointer-events: none;
 }
 
 .circle-bg.is-active {
@@ -875,9 +878,6 @@ select::-ms-expand {
 
 .top-service__cards {
   margin-top: 40px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   -webkit-box-pack: center;
@@ -1475,7 +1475,7 @@ select::-ms-expand {
   font-weight: 500;
   color: #000;
   line-height: 1.4375;
-  padding-bottom: 3px;
+  padding-bottom: 4px;
   font-family: "Noto Sans JP", sans-serif;
 }
 @media screen and (max-width: 768px) {
@@ -2764,7 +2764,7 @@ select::-ms-expand {
 
 .news {
   margin-top: 60px;
-  margin-bottom: 120px;
+  margin-bottom: 119px;
 }
 @media screen and (max-width: 768px) {
   .news {
@@ -2879,7 +2879,7 @@ select::-ms-expand {
 }
 
 .news__item-box .news-list__item {
-  padding-bottom: 31px;
+  padding-bottom: 30px;
 }
 @media screen and (max-width: 768px) {
   .news__item-box .news-list__item {
@@ -2888,7 +2888,7 @@ select::-ms-expand {
 }
 
 .news__item-box:not(:first-child) .news-list__item {
-  padding-top: 30px;
+  padding-top: 29px;
 }
 @media screen and (max-width: 768px) {
   .news__item-box:not(:first-child) .news-list__item {
@@ -3704,10 +3704,12 @@ select::-ms-expand {
 .works__date.date-text {
   font-size: 10px;
   margin-top: auto;
+  padding-top: 10px;
 }
 @media screen and (max-width: 768px) {
   .works__date.date-text {
     margin-top: 10px;
+    padding-top: 0;
   }
 }
 
