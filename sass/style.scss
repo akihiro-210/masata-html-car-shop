@@ -243,10 +243,11 @@
 // ドロワーメニュー
 .no-scroll {
     overflow: hidden;
+    pointer-events: none;
 }
 
 .drawer-menu{
-    position: absolute;
+    position: fixed;
     z-index: 5000;
     display: none;
     top: 0;
@@ -314,6 +315,7 @@
 .drawer-menu__icon-link{
     color: $white;
     font-size: 22px;
+    pointer-events: auto;
 }
 
 .circle-bg{
@@ -328,6 +330,7 @@
     background: $navy03;
     transition: transform 0.5s;
     opacity: 1;
+    pointer-events: none;
 }
 
 .circle-bg.is-active{
@@ -437,7 +440,6 @@
 }
 
 // テロップ右から左
-
 .slogan{
     height: 180px;
     width: 100%;
@@ -478,7 +480,6 @@
 }
 
 // About us
-
 .top-about{
     margin-top: 97px;
     @include mq("md"){
@@ -542,7 +543,6 @@
 }
 
 // Top Service
-
 .top-service{
     width: 100%;
     padding: 120px 0;
@@ -585,7 +585,6 @@
 
 .top-service__cards{
     margin-top: 40px;
-    align-items: center;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     justify-content: center;
@@ -604,6 +603,7 @@
         aspect-ratio: 335/170;
     }
 }
+
 .card-bg01,
 .card-bg02,
 .card-bg03{
@@ -675,7 +675,6 @@
 }
 
 // Works
-
 .top-works{
     width: 100%;
     padding: 120px 0 122px;
@@ -728,7 +727,6 @@
         column-gap: 18px;
         padding: 30px 0 29px;
     }
-
 }
 
 .top-article__img{
@@ -807,7 +805,6 @@
 }
 
 // News
-
 .top-news{
     padding-bottom: 118px;
     background-color: $bg;
@@ -1065,7 +1062,7 @@ li:first-child .news-list__item{
     font-weight: $medium;
     color: $black;
     line-height: calc(23/16);
-    padding-bottom: 3px;
+    padding-bottom: 4px;
     font-family: "Noto Sans JP",sans-serif;
     @include mq("md"){
         font-size: 14px;
@@ -1238,7 +1235,6 @@ li:first-child .news-list__item{
     transition: transform 0.6s;
 }
 
-
 @media (hover:hover){
     .bottom-contact__button:hover,
     .bottom-contact__tel:hover{
@@ -1341,6 +1337,7 @@ li:first-child .news-list__item{
     column-gap: 20px;
     align-items: center;
 }
+
 .footer__icon{
     line-height: 0;
 }
@@ -1463,7 +1460,6 @@ li:first-child .news-list__item{
 }
 
 // アバウトページコンセプト
-
 .concept{
     margin-top: 59px;
     width: 100%;
@@ -1553,7 +1549,6 @@ li:first-child .news-list__item{
 }
 
 // アバウトページPhilosophy
-
 .philosophy{
     margin-top: 121px;
     @include mq("md"){
@@ -1600,7 +1595,6 @@ li:first-child .news-list__item{
         margin-top: 30px;
     }
 }
-
 
 .philosophy__name.text{
     margin-top: 40px;
@@ -1685,7 +1679,6 @@ li:first-child .news-list__item{
 }
 
 // アバウトページAccess
-
 .access{
     margin-top: 120px;
     @include mq("md"){
@@ -2061,7 +2054,7 @@ li:first-child .news-list__item{
 // ニュースページ
 .news{
     margin-top: 60px;
-    margin-bottom: 120px;
+    margin-bottom: 119px;
     @include mq("md"){
         margin-top: 30px;
         margin-bottom: 80px;
@@ -2137,14 +2130,14 @@ li:first-child .news-list__item{
 }
 
 .news__item-box .news-list__item{
-    padding-bottom: 31px;
+    padding-bottom: 30px;
     @include mq("md"){
         padding-bottom: 19px;
     }
 }
 
 .news__item-box:not(:first-child) .news-list__item{
-    padding-top: 30px;
+    padding-top: 29px;
     @include mq("md"){
         padding-top: 20px;
     }
@@ -2188,6 +2181,7 @@ li:first-child .news-list__item{
         padding-bottom: 81px;
     }
 }
+
 .news-view .breadcrumbs,
 .works-view .breadcrumbs{
     margin-top: 200px;
@@ -2210,10 +2204,10 @@ li:first-child .news-list__item{
         column-gap: 40px;
     }
     @include mq("md"){
-            margin-top: 30px;
-            flex-direction: column;
-            align-items: center;
-            row-gap: 57px;
+        margin-top: 30px;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 57px;
     }
 }
 
@@ -2245,9 +2239,9 @@ li:first-child .news-list__item{
     row-gap: 23px;
     column-gap: 22px;
     flex-wrap: wrap;
-        @include mq("md"){
-            row-gap: 15px;
-            column-gap: 6px;
+    @include mq("md"){
+        row-gap: 15px;
+        column-gap: 6px;
     }
 }
 
@@ -2494,7 +2488,7 @@ li:first-child .news-list__item{
         width: 250px;
     }
     @include mq("md"){
-            width: 100%;
+        width: 100%;
     }
 }
 
@@ -2765,8 +2759,10 @@ li:first-child .news-list__item{
 .works__date.date-text{
     font-size: 10px;
     margin-top: auto;
+    padding-top: 10px;
     @include mq("md"){
         margin-top: 10px;
+        padding-top: 0;
     }
 }
 
@@ -2903,6 +2899,7 @@ li:first-child .news-list__item{
 .contact__inner.inner{
     max-width: 680px;
 }
+
 // 問い合わせフォーム
 .form__list{
     margin-top: 100px;
@@ -3549,6 +3546,7 @@ span[property=name].current-item{
     height: 1px;
     background-color: $gray02;
 }
+
 // パンクズリストの文字制限
 .breadcrumb span[property=name]{
     display: inline-block;
