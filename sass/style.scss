@@ -241,11 +241,6 @@
 }
 
 // ドロワーメニュー
-.no-scroll {
-    overflow: hidden;
-    pointer-events: none;
-}
-
 .drawer-menu{
     position: fixed;
     z-index: 5000;
@@ -1201,9 +1196,11 @@ li:first-child .news-list__item{
     margin-top: 20px;
     line-height: calc(26/22);
     padding: 17px 20px 23px 20px;
+    pointer-events: none;
     @include mq("md"){
         line-height: calc(19/16);
         padding: 19px 20px 20px;
+        pointer-events: auto;
     }
 }
 
@@ -3800,4 +3797,9 @@ span[property=name].current-item{
     @include mq("md"){
         display: none;
     }
+}
+
+.no-scroll {
+    overflow: hidden;
+    pointer-events: none;
 }

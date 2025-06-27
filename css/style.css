@@ -7,15 +7,6 @@ body {
   font-family: "Oswald", "Noto Sans JP", sans-serif;
 }
 
-a[href^="tel:"] {
-  pointer-events: none;
-}
-@media screen and (max-width: 768px) {
-  a[href^="tel:"] {
-    pointer-events: auto;
-  }
-}
-
 a {
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
@@ -426,11 +417,6 @@ select::-ms-expand {
           transform: translateY(-7px) rotate(-45deg);
   width: 100%;
   background-color: #F9F2E5;
-}
-
-.no-scroll {
-  overflow: hidden;
-  pointer-events: none;
 }
 
 .drawer-menu {
@@ -1650,11 +1636,13 @@ select::-ms-expand {
   margin-top: 20px;
   line-height: 1.1818181818;
   padding: 17px 20px 23px 20px;
+  pointer-events: none;
 }
 @media screen and (max-width: 768px) {
   .bottom-contact__tel {
     line-height: 1.1875;
     padding: 19px 20px 20px;
+    pointer-events: auto;
   }
 }
 
@@ -5020,4 +5008,9 @@ span[property=name].current-item {
   .md-none {
     display: none;
   }
+}
+
+.no-scroll {
+  overflow: hidden;
+  pointer-events: none;
 }/*# sourceMappingURL=style.css.map */
