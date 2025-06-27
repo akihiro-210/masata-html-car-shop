@@ -45,6 +45,7 @@ $(".js-hamburger,.js-drawer,.js-circle-bg").click(function () {
     $(".js-drawer").toggleClass("is-active");
     $(".js-circle-bg").toggleClass("is-active");
     $("body").toggleClass("no-scroll");
+    $(".bottom-contact__tel").toggleClass("no-scroll");
 });
 
 // メインスライダー

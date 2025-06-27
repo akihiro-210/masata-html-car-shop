@@ -8,12 +8,12 @@ body {
 }
 
 // PCでは電話番号のクリックを無効にする
-a[href^="tel:"] {
-  pointer-events: none;
-  @include mq("md") {
-    pointer-events: auto;
-  }
-}
+// a[href^="tel:"] {
+//   pointer-events: none;
+//   @include mq("md") {
+//     pointer-events: auto;
+//   }
+// }
 
 // aタグには標準でホバーアニメーションが付与されるようにする
 a {
