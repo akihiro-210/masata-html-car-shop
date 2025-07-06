@@ -677,39 +677,52 @@ select::-ms-expand {
 }
 
 .slogan {
-  height: 180px;
   width: 100%;
-  margin-top: 60px;
+  height: 180px;
   overflow: hidden;
-  white-space: nowrap;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
+  margin-top: 60px;
 }
 @media screen and (max-width: 768px) {
   .slogan {
-    margin-top: 28px;
     height: 101px;
+    margin-top: 28px;
+  }
+}
+
+.slogan__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation: loop 15s linear infinite;
+          animation: loop 15s linear infinite;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  will-change: transform;
+}
+@media screen and (max-width: 768px) {
+  .slogan__inner {
+    -webkit-animation-duration: 20s;
+            animation-duration: 20s;
   }
 }
 
 .slogan__text {
+  white-space: nowrap;
   color: #011950;
   margin-right: 100px;
-  display: inline-block;
   font-size: 150px;
   font-weight: 700;
   font-family: "Noto Sans JP", sans-serif;
-  overflow: hidden;
-  -webkit-animation: loop 8s linear infinite;
-          animation: loop 8s linear infinite;
   line-height: 1.2;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 @media screen and (max-width: 768px) {
   .slogan__text {
     font-size: 84px;
-    margin-right: 60px;
     line-height: 1.2023809524;
+    margin-right: 60px;
   }
 }
 
@@ -719,8 +732,8 @@ select::-ms-expand {
             transform: translateX(0%);
   }
   100% {
-    -webkit-transform: translateX(-108%);
-            transform: translateX(-108%);
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
 }
 
@@ -730,14 +743,14 @@ select::-ms-expand {
             transform: translateX(0%);
   }
   100% {
-    -webkit-transform: translateX(-108%);
-            transform: translateX(-108%);
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
 }
 .top-about {
   margin-top: 97px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .top-about {
     margin-top: 41px;
   }
@@ -761,10 +774,6 @@ select::-ms-expand {
     -webkit-column-gap: 30px;
        -moz-column-gap: 30px;
             column-gap: 30px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .top-about__wrap {
     grid-template-columns: 1fr;
   }
 }
@@ -773,17 +782,17 @@ select::-ms-expand {
   max-width: 550px;
   aspect-ratio: 55/48;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .top-about__img {
     aspect-ratio: 335/292;
-    max-width: 728px;
+    max-width: 100%;
   }
 }
 
 .top-about__content {
   margin-top: -33px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .top-about__content {
     margin-top: 0;
   }
@@ -802,7 +811,7 @@ select::-ms-expand {
 .top-about__text {
   margin-top: 40px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .top-about__text {
     margin-top: 30px;
   }
@@ -1997,6 +2006,13 @@ select::-ms-expand {
   }
 }
 
+@media screen and (max-width: 360px) {
+  .page-link__items {
+    -webkit-column-gap: 10px;
+       -moz-column-gap: 10px;
+            column-gap: 10px;
+  }
+}
 .page-link__item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3280,11 +3296,13 @@ select::-ms-expand {
   font-size: 14px;
   font-weight: 500;
 }
-.nav-previous:hover,
-.nav-next:hover {
-  cursor: pointer;
-}
 
+@media (hover: hover) {
+  .nav-previous:hover,
+  .nav-next:hover {
+    cursor: pointer;
+  }
+}
 .news-view .nav-previous {
   height: 41px;
 }
@@ -4065,11 +4083,6 @@ select::-ms-expand {
   border-radius: 4px;
   background-color: #011950;
 }
-.form__submit-input:hover {
-  -webkit-transition: opacity 0.3s;
-  transition: opacity 0.3s;
-  opacity: 0.7;
-}
 @media screen and (max-width: 768px) {
   .form__submit-input {
     width: 260px;
@@ -4077,6 +4090,13 @@ select::-ms-expand {
   }
 }
 
+@media (hover: hover) {
+  .form__submit-input:hover {
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    opacity: 0.7;
+  }
+}
 .confirm {
   margin-top: 60px;
   margin-bottom: 120px;
