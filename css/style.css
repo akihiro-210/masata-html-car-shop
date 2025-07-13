@@ -707,19 +707,21 @@ select::-ms-expand {
 .slogan__text {
   white-space: nowrap;
   color: #011950;
-  margin-right: 100px;
+  margin-right: 50px;
   font-size: 150px;
   font-weight: 700;
   font-family: "Noto Sans JP", sans-serif;
   line-height: 1.2;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  width: 1620px;
 }
 @media screen and (max-width: 768px) {
   .slogan__text {
     font-size: 84px;
     line-height: 1.2023809524;
-    margin-right: 60px;
+    margin-right: 20px;
+    width: 910px;
   }
 }
 

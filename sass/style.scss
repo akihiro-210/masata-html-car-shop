@@ -462,16 +462,18 @@
 .slogan__text {
     white-space: nowrap;
     color: $navy;
-    margin-right: 100px;
+    margin-right: 50px;
     font-size: 150px;
     font-weight: $bold;
     font-family: "Noto Sans JP", sans-serif;
     line-height: calc(180/150);
     flex-shrink: 0;
+    width: 1620px;
     @include mq("md") {
         font-size: 84px;
         line-height: calc(101/84);
-        margin-right: 60px;
+        margin-right: 20px;
+        width: 910px;
     }
 }
 
