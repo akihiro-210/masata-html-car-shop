@@ -62,45 +62,18 @@ const swiper = new Swiper(".mv__swiper", {
 });
 
 //スローガン左から右に流れるアニメーション
-// const inner = document.querySelector('.js-slogan-inner');
-// const baseHTML = inner.innerHTML;
 
-// function updateSlogans() {
-//   inner.innerHTML = baseHTML;
+// フォント名はCSSで指定しているものと完全一致で
+const noto = new FontFaceObserver('Noto Sans JP', {
+  weight: 700
+});
 
-//   // 1つのスローガンの幅を計測するため、一旦DOMに追加
-//   const temp = document.createElement('div');
-//   temp.className = 'js-slogan-inner';
-//   temp.style.display = 'inline-flex';
-//   temp.style.visibility = 'hidden';
-//   temp.innerHTML = baseHTML;
-//   document.body.appendChild(temp);
-
-//   const singleWidth = temp.scrollWidth;
-//   document.body.removeChild(temp);
-
-//   const minWidth = window.innerWidth * 2; // 十分に横幅をカバー
-
-//   let totalWidth = 0;
-//   let count = 0;
-//   while (totalWidth < minWidth || count % 2 !== 0) {
-//     inner.innerHTML += baseHTML;
-//     totalWidth += singleWidth;
-//     count++;
-//   }
-// }
-
-// // 初期化
-// updateSlogans();
-
-// // リサイズ対応
-// let resizeTimer;
-// window.addEventListener('resize', () => {
-//   clearTimeout(resizeTimer);
-//   resizeTimer = setTimeout(() => {
-//     updateSlogans();
-//   }, 300);
-// });
+// フォント読み込み完了後にアニメーションクラスを付ける
+noto.load().then(function () {
+  document.querySelector('.js-slogan-inner').classList.add('is-animated');
+}).catch(function () {
+  console.warn('フォント読み込みに失敗しました。');
+});
 
 
 // アバウトページスライダー

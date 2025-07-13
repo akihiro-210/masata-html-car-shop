@@ -693,17 +693,20 @@ select::-ms-expand {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-animation: loop 15s linear infinite;
-          animation: loop 15s linear infinite;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   will-change: transform;
 }
+
+.slogan__inner.is-animated {
+  -webkit-animation: loop 25s linear infinite;
+          animation: loop 25s linear infinite;
+}
 @media screen and (max-width: 768px) {
-  .slogan__inner {
-    -webkit-animation-duration: 20s;
-            animation-duration: 20s;
+  .slogan__inner.is-animated {
+    -webkit-animation-duration: 30s;
+            animation-duration: 30s;
   }
 }
 

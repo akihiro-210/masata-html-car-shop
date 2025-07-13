@@ -448,11 +448,14 @@
 
 .slogan__inner {
     display: flex;
-    animation: loop 15s linear infinite;
     width: max-content;
     will-change: transform;
+}
+
+.slogan__inner.is-animated {
+    animation: loop 25s linear infinite;
     @include mq("md"){
-        animation-duration: 20s;
+        animation-duration: 30s;
     }
 }
 
@@ -474,10 +477,10 @@
 
 @keyframes loop {
     0% {
-    transform: translateX(0%);
+        transform: translateX(0%);
     }
     100% {
-    transform: translateX(-50%);
+        transform: translateX(-50%);
     }
 }
 
