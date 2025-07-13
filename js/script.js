@@ -69,15 +69,17 @@ $(function () {
     const noto = new FontFaceObserver('Noto Sans JP', { weight: 700 });
 
     noto.load().then(() => {
-      setTimeout(() => {
-        $target.addClass('is-animated');
-      }, 100);
+      // フォント読み込み完了後、2フレーム遅らせてクラス追加
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          $target.addClass('is-animated');
+        });
+      });
     }).catch(() => {
       console.warn('Noto Sans JPの読み込みに失敗しました');
     });
   }
 });
-
 
 // アバウトページスライダー
 const aboutSwiper = new Swiper(".about-swiper", {
