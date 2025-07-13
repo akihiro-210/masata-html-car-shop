@@ -67,12 +67,13 @@ $(function () {
 
   if ($target.length) {
     const noto = new FontFaceObserver('Noto Sans JP', { weight: 700 });
-
     noto.load().then(() => {
       // フォント読み込み完了後、2フレーム遅らせてクラス追加
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          $target.addClass('is-animated');
+          setTimeout(() => {
+            $target.addClass('is-animated');
+          }, 2000);
         });
       });
     }).catch(() => {
