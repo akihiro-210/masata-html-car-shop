@@ -73,7 +73,7 @@ $(function () {
         requestAnimationFrame(() => {
           setTimeout(() => {
             $target.addClass('is-animated');
-          }, 2000);
+          }, 1000);
         });
       });
     }).catch(() => {
