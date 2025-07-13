@@ -62,17 +62,20 @@ const swiper = new Swiper(".mv__swiper", {
 });
 
 //スローガン左から右に流れるアニメーション
+$(function () {
+  const $target = $('.js-slogan-inner');
 
-// フォント名はCSSで指定しているものと完全一致で
-const noto = new FontFaceObserver('Noto Sans JP', {
-  weight: 700
-});
+  if ($target.length) {
+    const noto = new FontFaceObserver('Noto Sans JP', { weight: 700 });
 
-// フォント読み込み完了後にアニメーションクラスを付ける
-noto.load().then(function () {
-  document.querySelector('.js-slogan-inner').classList.add('is-animated');
-}).catch(function () {
-  console.warn('フォント読み込みに失敗しました。');
+    noto.load().then(() => {
+      setTimeout(() => {
+        $target.addClass('is-animated');
+      }, 100);
+    }).catch(() => {
+      console.warn('Noto Sans JPの読み込みに失敗しました');
+    });
+  }
 });
 
 
