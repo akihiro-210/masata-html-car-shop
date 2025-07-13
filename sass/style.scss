@@ -454,9 +454,9 @@
 
 .slogan__inner.is-animated {
     animation: loop 25s linear infinite;
-    @include mq("md"){
-        animation-duration: 30s;
-    }
+    // @include mq("md"){
+    //     animation-duration: 30s;
+    // }
 }
 
 .slogan__text {
